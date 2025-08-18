@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+#main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#left{
+    width: 40%;
+    height: 100%;
+    background-color: white;
+}
+
+#navbar ul{
+    list-style: none;
+    display:flex;
+    gap:60px;
+    align-items: center;
+}
+
+#navbar a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#navbar i {
+            font-size: 24px;
+            color: #1DA1F2; /* Twitter blue */
+            cursor: pointer;
+}
+
+ #navbar i:hover {
+            color: #0d8ddb;
+        }
+
+#text{
+    margin-top: 30%;
+    font-size: 35px;
+    text-align: center;
+}        
+
+#para{
+    margin-top: 20px;
+    font-size: 20px ;
+    text-align: center;
+    opacity: 0.5;
+}
+
+.read{
+    margin-top: 40px;
+    margin-left: 30px;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+#right{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#rtop{
+    display: flex;
+    width: 100%;
+    height: 50%;
+}
+
+#right-left{
+    width: 50%;
+    height: 100%;
+    background-image: url('some-of-my-favourite-bird-images-from-the-last-12-months-v0-jkyypk1t5zre1.webp');
+    background-position: center;
+    background-size: cover;
+    display: flex;               
+    justify-content: center;
+    align-items: center;
+}
+
+#right-right{
+    width: 50%;
+    height: 100%;
+    background-image: url('360_F_438771782_jADDa1o9Je4gBP6txgJ2pHVdj0x3ipJH.jpg');
+    background-position: center;
+    background-size: cover;
+    display: flex;               
+    justify-content: center;
+    align-items: center;
+} 
+
+#rbottom{
+    width: 100%;
+    height: 50%;
+    background-image: url('premium_photo-1671650123234-85096b81babe.jpeg');
+    background-position: center;
+    background-size: cover;
+    display: flex;               
+    justify-content: center;
+    align-items: center;
+}
+
+@media(max-width:500px){
+    #main{
+        flex-direction: column;
+    }
+
+    #main #left{
+        width: 100px;
+    }
+    #main #right{
+        width: 100px;
+    }
+
+} 

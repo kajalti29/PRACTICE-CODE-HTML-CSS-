@@ -1,0 +1,12 @@
+.box{
+    height: 200px;
+    width: 600px;
+    /* border: 1px solid black; */
+    border: 1px dotted;
+    background-color: tomato;
+    /* overflow: visible; */
+    /* overflow: hidden; */
+     overflow: scroll; 
+    /* overflow: auto; */
+
+}

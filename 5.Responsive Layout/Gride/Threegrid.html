@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid-container{
+            display: grid;
+            height: 100vh;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 10px;
+            grid-template-areas: 
+                "Header Header Header"
+                "navigation content sidebar"
+                "footer footer footer";
+            color: white;
+            font-size: 20px;                      
+        }
+        .Header{
+            grid-area: Header;
+            background-color: #92116b;
+            text-align: center;
+            padding: 80px;
+        }
+        .navigation{
+            grid-area: navigation;
+            background-color:#92116b;
+            padding:80px;
+        }
+        .content{
+            grid-area: content;
+            background-color: #92116b;
+            padding:80px;
+        }
+        .sidebar{
+            grid-area: sidebar;
+            background-color:#92116b;
+            padding:80px;
+        }
+        .footer{
+            grid-area: footer;
+            background-color: #92116b;
+            text-align: center;
+            padding: 80px;
+        }
+
+        /* ✅ Responsive media query */
+        @media (max-width: 600px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                grid-template-areas: 
+                    "Header"
+                    "navigation"
+                    "content"
+                    "sidebar"
+                    "footer";
+                background-color: cornflowerblue;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="Header">Header</div>
+        <div class="navigation">Navigation</div>
+        <div class="content">Content</div>
+        <div class="sidebar">Sidebar</div>
+        <div class="footer">Footer</div>
+    </div>
+</body>
+</html>

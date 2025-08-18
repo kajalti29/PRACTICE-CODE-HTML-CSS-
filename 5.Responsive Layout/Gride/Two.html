@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: #fff;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        h2{
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .grid-container{
+            display: grid;
+            height: 100vh;
+            grid-template-columns: 1fr 6fr 1fr;
+            grid-template-rows: 1fr 6fr 1fr;
+            grid-template-areas: "header header header"
+            "menu main other"
+            "footer footer footer";  
+            text-align: center;
+            font-size: 25px;
+
+        }
+        .header{
+            grid-area: header;
+            background-color: blueviolet;
+            margin-top: 10px;
+        
+        }
+        .menu{
+            grid-area: menu;
+            background-color: lightseagreen;
+        }
+        .main{
+            grid-area: main;
+            background-color:lightcoral;
+        }
+        .other{
+            grid-area: other;
+            background-color: lightseagreen;
+        }
+        .footer{
+            grid-area: footer;
+            background-color:blueviolet;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Grid Layout</h2>
+    <div class="grid-container">
+        <div class="header">Header</div>
+        <div class="menu">Menu</div>
+        <div class="main">Main</div>
+        <div class="other">Other</div>
+        <div class="footer">Footer</div>
+    </div>
+</body>
+</html>

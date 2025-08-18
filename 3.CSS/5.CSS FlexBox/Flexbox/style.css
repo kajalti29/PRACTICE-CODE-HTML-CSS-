@@ -1,0 +1,41 @@
+.container{
+    height: 400px;
+    border: 2px solid green;
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+
+    /* ye main axis me  items ko align karta hai  */
+    justify-content: flex-start;
+    justify-content: flex-end; /*sare item main axis me right side align hote hai */
+    justify-content: center;  /*Sari item main axis ke center me aa jate hai */
+    justify-content: space-around;  /*Sare item ke bich me qeual space hota, But starting and last me space qeual nhi hota hai */
+    justify-content: space-evenly;   /*Sare item ke bich me same space hoga*/
+    justify-content: space-between;  /*Sare item ke bich me same  space hoga lekin start or end ke item apn parent container se add ho jayege*/
+
+
+
+    /*Align items ye vertical align hota hai*/
+    align-items: flex-start;
+    align-items: flex-end;
+    align-items: center;
+    align-items: baseline;
+
+
+    /*align-content:- ye flexbox me jitni bhi rows ban rhi hai unke bich ke spacing ko align kr leta hai ya handle karta hai */
+    align-content: flex-start;/*sari rows top me sift ho jayegi*/
+    align-content: flex-end; /*sari rows bottom me sift ho jayegi*/
+    align-content: center; /* sari rows center me sift ho jayegi*/
+    align-content: space-around; /* sari rows ke bich me space  ho jayegi*/
+    align-content: space-between; /* sari rows ke me queal space ho jayegi*/
+    align-content: space-evenly;
+
+
+    /* Flex-items properties:- ye  uper ke jitne bhi property hai ye box pr aply hote hai 
+    lekin ab ye flex-item box ke ander rkhe items pr aplly hoge*/
+}
+.box{
+    border: 1px solid brown;
+    background-color: palevioletred;
+    width: 50px;
+}

@@ -1,0 +1,48 @@
+body {
+    background-color: aliceblue;
+    font-family: 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+}
+
+.div {
+    font-size: 25px;
+    background-color: #fff;
+    height: 30rem;
+    width: 40%;
+    border: 1px solid white;
+    margin: 50px auto; /* Center container horizontally */
+    position: relative; /* Needed for absolute positioning inside */
+}
+
+/* Common style for all text positions */
+.div div {
+    position: absolute;
+}
+
+/* Corner positions */
+.top-left {
+    top: 10px;
+    left: 10px;
+}
+
+.top-right {
+    top: 10px;
+    right: 10px;
+}
+
+.bottom-left {
+    bottom: 10px;
+    left: 10px;
+}
+
+.bottom-right {
+    bottom: 10px;
+    right: 10px;
+}
+
+/* Center position */
+.center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

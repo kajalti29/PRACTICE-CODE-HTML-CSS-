@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3D Transform Demo</title>
+<style>
+body {
+  background: #111;
+  color: white;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  perspective: 800px; /* Depth for all 3D effects */
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.box {
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(45deg, #ff6f61, #6fb1fc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  border-radius: 10px;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+/* Hover Effects */
+.rotateX:hover {
+  transform: rotateX(180deg);
+}
+
+.rotateY:hover {
+  transform: rotateY(180deg);
+}
+
+.rotateZ:hover {
+  transform: rotateZ(180deg);
+}
+
+.translate3d:hover {
+  transform: translate3d(50px, 50px, 100px);
+}
+
+.scale3d:hover {
+  transform: scale3d(1.5, 1.5, 1.5);
+}
+
+.rotate3d:hover {
+  transform: rotate3d(1, 1, 0, 180deg);
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="box rotateX">rotateX</div>
+  <div class="box rotateY">rotateY</div>
+  <div class="box rotateZ">rotateZ</div>
+  <div class="box translate3d">translate3d</div>
+  <div class="box scale3d">scale3d</div>
+  <div class="box rotate3d">rotate3d</div>
+</div>
+
+</body>
+</html>

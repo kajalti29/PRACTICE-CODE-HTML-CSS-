@@ -1,0 +1,37 @@
+1% and 1vm me different kya hai
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Percent vs VH Demo</title>
+  <style>
+    .parent {
+      height: 400px;
+      background-color: lightgray;
+      border: 2px solid black;
+    }
+
+    .child-percent {
+      height: 10%;
+      background-color: lightblue;
+    }
+
+    .child-vh {
+      height: 10vh;
+      background-color: lightgreen;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Height: 10% (of parent)</h2>
+  <div class="parent">
+    <div class="child-percent">Height = 10% of Parent</div>
+  </div>
+
+  <h2>Height: 10vh (of screen)</h2>
+  <div class="child-vh">Height = 10% of Viewport</div>
+
+</body>
+</html>

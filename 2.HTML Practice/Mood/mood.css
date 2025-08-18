@@ -1,0 +1,38 @@
+body{
+    font-family:Arial, sans-serif;
+    background-color:lightslategray;
+    display: flex ;
+    justify-content:center;
+    background-image: url("photo-1614850523011-8f49ffc73908.jpg");
+    background-repeat: no-repeat;
+    padding: 50px;
+}
+.container{
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    color: white;
+    width: 300px;
+    text-align: center;
+    background-image: url("gradient-liquid-abstract-background-design-dark-blue-background-with-wavy-fluid-shapes-futuristic-design-vector.jpg");
+}
+.mood-options{
+    margin:20px;
+}
+.mood-btn{
+    font-size: 24px;
+    margin: 5px;
+    cursor: pointer;
+}
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+li{
+    background: #e1f5fe;
+    color: black;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+
+}

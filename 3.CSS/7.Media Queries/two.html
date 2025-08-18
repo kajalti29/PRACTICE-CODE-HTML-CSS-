@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responisve page</title>
+    <style>
+        body{
+            background-color: lightblue;
+        }
+
+        h1{
+            text-align: center;
+            margin-top: 30%;
+        }
+
+        p{
+           text-align: center;
+           font-size: large;
+           color:black;
+        }
+         
+        img{
+            border-radius: 90px;
+        }
+
+        img:hover{
+            transform: scale(0, 1.5);
+
+        }
+
+        @media(min-width: 480px){
+
+            body{
+                background-color:lightcoral;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Responsive page </h1>
+    <p>The media query will only apply if the media type is screen and the viewport is 480px wide or wider.</p>
+    <img src="download.jpeg"alt="dog">
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            background-color: brown;
+            width: 500px;
+            border: 1px solid black;
+            display: grid;
+
+
+
+            grid-template-columns: 200px 200px 150px;  /*column add karna*/
+            /* grid-template-columns: repeat(2, 1fr); */
+
+            grid-template-rows: 90px 90px 90px 90px;  /*Rows add karna*/
+            /* grid-template-rows: repeat(4,1fr); */
+        }
+        .box{
+            background-color: aqua;
+            border: 3px solid black;
+            width: 80px;
+            height: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+      <div class="box">box1</div>
+      <div class="box">box2</div>
+      <div class="box">box3</div>
+      <div class="box">box4</div>
+      <div class="box">box5</div>
+    </div>
+</body>
+</html>

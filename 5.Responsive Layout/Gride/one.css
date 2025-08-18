@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  grid-template-rows: auto 1fr auto auto;
+  grid-template-areas:
+    "header header header"
+    "left main right"
+    "left-footer main right"
+    "footer footer footer";
+  gap: 10px;
+  height: 100vh;
+}
+
+/* grid areas mapping */
+.container .div:nth-child(1) { grid-area: header; background: palevioletred; }
+.container .div:nth-child(2) { grid-area: banner; background:tomato; } /* (not in template yet) */
+.container .div:nth-child(3) { grid-area: left; background: yellow; }
+.container .div:nth-child(4) { grid-area: main; background: lightseagreen; }
+.container .div:nth-child(5) { grid-area: right; background: teal; }
+.container .div:nth-child(6) { grid-area: left-footer; background: green; color: #fff; }
+.container .div:nth-child(7) { grid-area: footer; background: blueviolet; }
+
+.div {
+  padding: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  border: 1px solid #333;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "banner"
+      "main"
+      "left"
+      "right"
+      "left-footer"
+      "footer";
+  }
+}

@@ -1,0 +1,57 @@
+.box {
+    font-size: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Common box styles */
+.box div {
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    background-image: linear-gradient(pink,skyblue);
+}
+
+/* Individual transforms */
+.bone {
+     transform: translate(50px, 100px); 
+}
+
+.btwo {
+    transform: rotate(45deg);
+}
+
+.bthree {
+    transform: scale(1.5);
+}
+
+.bfour {
+   transform: skewX(20deg);
+}
+
+.bfive {
+    transform: skewY(20deg);
+}
+
+.bsix {
+     transform: rotate(30deg) scale(1.2); 
+}
+
+.bseven {
+    transform: translateX(-30px) rotate(-15deg); 
+}
+
+.beight {
+     transform: scaleX(1.5); 
+}
+
+.bnine {
+    transform: scaleY(1.5); 
+}

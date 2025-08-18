@@ -1,0 +1,68 @@
+## 🧠 **HTML Theoretical Questions**
+
+1. **What is HTML?**
+2. **What are semantic elements? Give examples.**
+3. **Difference between `<div>` and `<span>`?**
+4. **What are attributes in HTML?**
+5. **What is the difference between `id` and `class`?**
+6. **Explain the HTML5 doctype.**
+7. **What is the use of the `<meta>` tag?**
+8. **What is the difference between HTML and XHTML?**
+9. **What are void (self-closing) elements?**
+10. **What is the purpose of the `<form>` tag?**
+11. **Difference between `<script>`, `<noscript>`, and `<style>` tags?**
+12. **What is the purpose of `alt` attribute in `<img>` tag?**
+13. **What is the difference between block-level and inline elements?**
+14. **What are data-* attributes in HTML5?*\*
+15. **How is local storage different from cookies?**
+
+---
+
+## 🧠 **CSS Theoretical Questions**
+
+1. **What is CSS and why is it used?**
+2. **Difference between inline, internal, and external CSS?**
+3. **What are selectors in CSS? Give examples.**
+4. **What is the difference between `em`, `rem`, `%`, `px`?**
+5. **Explain the box model in CSS.**
+6. **What is specificity in CSS?**
+7. **What are pseudo-classes and pseudo-elements?**
+8. **What is the difference between `position: relative`, `absolute`, `fixed`, and `sticky`?**
+9. **Difference between `visibility: hidden` and `display: none`?**
+10. **What is the z-index and how does it work?**
+11. **What are media queries in CSS?**
+12. **What is flexbox?**
+13. **What is the difference between flexbox and grid?**
+14. **How can you make a website responsive?**
+15. **What is a CSS preprocessor? (e.g., SASS or LESS)**
+
+---
+
+## 🛠️ **HTML Practical Questions**
+
+1. **Create a simple HTML page with a form that has input fields for Name, Email, and a Submit button.**
+2. **Embed a YouTube video on a webpage.**
+3. **Create a table with 3 rows and 4 columns with headings.**
+4. **Add an image with `alt` text and set its width to 200px.**
+5. **Create a navigation bar with 3 links: Home, About, Contact.**
+6. **Create an unordered and ordered list of your favorite fruits.**
+7. **Use semantic tags to design a blog post layout (`<header>`, `<main>`, `<section>`, `<footer>`).**
+8. **Create a login form using HTML.**
+9. **Create a page layout with two sections: sidebar and main content using `<aside>` and `<article>`.**
+10. **Add a progress bar using `<progress>` tag.**
+
+---
+
+## 🛠️ **CSS Practical Questions**
+
+1. **Style a div to look like a card with box-shadow, padding, and border-radius.**
+2. **Create a horizontal navigation bar using flexbox.**
+3. **Center a div both vertically and horizontally using flexbox.**
+4. **Create a responsive layout using media queries (e.g., change background color on screen width < 600px).**
+5. **Style a form with custom input borders and hover effects.**
+6. **Animate a button on hover using transition.**
+7. **Use pseudo-class `:hover` to change the color of a link when hovered.**
+8. **Create a dropdown menu using only HTML and CSS.**
+9. **Implement a sticky header that stays on top when scrolling.**
+10. **Style a table with zebra stripes (alternating row colors).**
+

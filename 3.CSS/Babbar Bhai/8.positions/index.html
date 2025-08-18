@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>positions</title>
+    <style>
+        /* p{ 
+            position: static;
+        } */
+         .box{
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            border: 1px solid black;
+         }
+         /* #box3{
+            position: relative;
+            top:100px;
+            left:50px;
+         } */
+
+
+         /* position: absolute; is removed from the normal document flow */
+         /* #box3{
+            position: absolute;
+            top:20px;
+            left:50px
+         } */
+
+
+         /* #box1{
+            position: fixed;
+         } */
+
+         #box2{
+            position: sticky;
+            top:10px;
+         }
+    </style>
+</head>
+<body>
+     <!-- static Position -->
+    <!-- <p>This a para</p>
+    <h1>Heading 1</h1>
+    <p>Second para</p>
+    <h2>Second Heading</h2> -->
+
+    <div class="div"> 
+        <div class="box" id="box1">A</div>
+        <div class="box" id="box2">B</div>
+        <div class="box" id="box3">C</div>
+        <div class="box" id="box4">D</div>
+    </div>
+
+</body>
+</html>

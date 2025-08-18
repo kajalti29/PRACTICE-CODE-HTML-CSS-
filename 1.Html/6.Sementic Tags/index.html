@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semantic HTML Example</title>
+
+  <style>
+    body{
+      font-family: 'Times New Roman', Times, serif;
+      margin: 18px;
+      padding: 0;
+      background-color:#f3f3f3;
+      box-sizing: border-box;
+    }
+    .box{
+      border: 1px solid black;
+      width: 800px;
+      height: 600px;
+      background-color:ghostwhite;
+    }
+    header{
+      background-color: #007acc;
+      color: #f3f3f3;
+      text-align: center;
+      padding: 8px;
+      margin-top: 20px;
+
+    
+    }
+    nav a {
+      padding: 10px;
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: large;
+    }
+    nav a:hover{
+      color: blueviolet;
+    }
+
+    main{
+      display:flex;
+      padding: 20px;
+    }
+    article{
+      border: 1px solid white;
+      margin: 10px;
+      padding: 8px;
+      width: 300px;
+      height: 200px;
+      background-color:white;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.4);
+    }
+    article:hover{
+      transform: scale(1.02);
+      background-color:lightcoral ;
+
+    }
+    section{
+    border: 1px solid white;
+      margin: 10px;
+      padding: 8px;
+      width:300px;
+      height: 200px;
+      background-color:white;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.4);
+    }
+    section:hover{
+      transform: scale(1.02);
+      background-color:lightcoral ;
+
+    }
+    aside{
+      border: 1px solid white;
+      margin: 10px;
+      padding: 8px;
+      width:300px;
+      height: 200px;
+      background-color:white;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.4);
+    }
+    aside:hover{
+      transform: scale(1.02);
+      background-color:lightcoral ;
+
+    }
+    footer{
+      background-color: #222;
+      color: #f3f3f3;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+      font-size: 20px;
+    }
+  </style>
+
+
+</head>
+<body>
+
+  <div class="box">
+  <!--Header Section-->
+<header>
+  <h1>My Travel Blog</h1>
+</header>
+
+<!--Nav-->
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Destinations</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <!--Main content-->
+  <main>
+
+    <!--Main article-->
+    <article>
+      <h2>Trip to Manali</h2>
+      <p>Manal is a beautiful hill station in Himachal pradesh. I visited it last summer.</p>
+    </article>
+
+    <!--Another section of content-->
+    <section>
+      <h2>Travel Tips</h2>
+      <ul>
+        <li>Carry warn</li>
+        <li>Book hotel in advance</li>
+        <li>Try local food</li>
+      </ul>
+    </section>
+
+    <!--Sidebar or related content-->
+    <aside>
+      <h3>Related posts</h3>
+      <ul>
+        <li><a href="#">Shimla Trip</a></li>
+        <li><a href="#">Mussoorie Visit</a></li>
+      </ul>
+    </aside>
+
+  </main>
+
+  <!--footer-->
+  <footer>
+    <p>&copy; 2025 My Travel Blog. All rights reserved.</p>
+  </footer>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Navbar with Logo</title>
+  <style>
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      background-image: url('cover.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Navbar container */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 98%;
+      background-color: #222;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      z-index: 1000;
+    }
+
+    /* Logo on left */
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    /* Navigation links */
+    .nav-link ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-link li {
+      display: inline;
+    }
+
+    .nav-link a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      padding: 10px 15px;
+      border-radius: 5px;
+    }
+
+    .nav-link a:hover {
+      background-color: thistle;
+      color: tomato;
+    }
+
+    /* Content below navbar */
+    .main-content {
+      text-align: center;
+      padding-top: 120px; /* Push content below fixed navbar */
+      color: white;
+      text-shadow: 1px 1px 3px black;
+      font-size: 20pxpx;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      background-color: tomato;
+      color: white;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+      border-radius: 5px;
+    }
+
+    .btn:hover {
+      background-color:tomato;
+      color:white;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar with Logo and Links -->
+  <div class="navbar">
+    <div class="logo">Login</div>
+    <nav class="nav-link">
+      <ul>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">SERVICE</a></li>
+        <li><a href="#">CONTACT</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <h2>Welcome to my website</h2>
+    <p>Discover amazing experience and create lasting memories</p>
+    <button class="btn">Get Started</button>
+  </div>
+
+</body>
+</html>

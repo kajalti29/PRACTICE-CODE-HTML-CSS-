@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Order Example</title>
+    <style>
+        .div {
+            display: flex; /* Makes child .box items flex items */
+            gap: 10px;     /* Optional spacing between boxes */
+        }
+        .box {
+            border: 1px solid black;
+            background-color: aqua;
+            padding: 20px;
+            font-weight: bold;
+        }
+        #box1 {
+            order: 1; /* Changes the visual order */
+            /* flex-grow: 1; */
+            /* flex-shrink: 4; */
+            /* align-self: flex-start; */
+        }
+
+        #box3{
+            order: 8;
+            /* align-self: flex-end; */
+            /* flex-shrink: 2; */
+            /* flex-grow: 1; */
+        }
+    </style>
+</head>
+<body>
+    <div class="div">
+        <div class="box" id="box1">Box1</div>
+        <div class="box" id="box2">Box2</div>
+        <div class="box" id="box3">Box3</div>
+    </div>
+</body>
+</html>
