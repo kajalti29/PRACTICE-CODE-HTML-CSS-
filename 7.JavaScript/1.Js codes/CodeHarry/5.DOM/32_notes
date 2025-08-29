@@ -1,0 +1,234 @@
+बिलकुल 👍 चलिए **Advanced JavaScript / Modern JS** के ये सब topics **step by step, simple और detailed** तरीके से समझते हैं।
+
+---
+
+## 1️⃣ **ES6+ Features**
+
+### a) `let` और `const`
+
+* **let**: Block-scoped variable, value बदल सकती है।
+* **const**: Block-scoped, value बदल नहीं सकती।
+
+```javascript
+let x = 10;
+x = 20; // सही
+
+const y = 30;
+y = 40; // ❌ Error
+```
+
+---
+
+### b) Arrow Functions
+
+* Short syntax function का। `this` keyword lexical scope में रहता है।
+
+```javascript
+// Normal function
+function add(a, b) {
+    return a + b;
+}
+
+// Arrow function
+const add = (a, b) => a + b;
+
+console.log(add(2, 3)); // 5
+```
+
+---
+
+### c) Template Literals
+
+* Strings में variables और expressions embed करना आसान।
+* Backticks `` ` `` use होते हैं।
+
+```javascript
+const name = "Kajal";
+console.log(`Hello ${name}, welcome!`); 
+// Output: Hello Kajal, welcome!
+```
+
+---
+
+### d) Destructuring
+
+* Arrays या Objects से values निकालना आसान।
+
+```javascript
+// Array destructuring
+const arr = [1, 2, 3];
+const [a, b] = arr;
+console.log(a, b); // 1 2
+
+// Object destructuring
+const person = {name: "Kajal", age: 20};
+const {name, age} = person;
+console.log(name, age); // Kajal 20
+```
+
+---
+
+## 2️⃣ **Modules (import / export)**
+
+* Code को छोटे-छोटे files में बाँटना।
+* Export: किसी file से function, variable या class बाहर भेजना।
+* Import: किसी file में उसे इस्तेमाल करना।
+
+```javascript
+// utils.js
+export function add(a, b) {
+    return a + b;
+}
+
+// app.js
+import { add } from './utils.js';
+console.log(add(5, 10)); // 15
+```
+
+---
+
+## 3️⃣ **Promises**
+
+* Async operations handle करने का तरीका।
+* 3 states: **pending, resolved, rejected**
+
+```javascript
+const myPromise = new Promise((resolve, reject) => {
+    let success = true;
+    if(success) resolve("Done");
+    else reject("Error");
+});
+
+myPromise.then((value) => console.log(value)) // Done
+         .catch((err) => console.log(err));
+```
+
+---
+
+## 4️⃣ **Async / Await**
+
+* Promises को आसान syntax में handle करना।
+
+```javascript
+function fetchData() {
+    return new Promise((resolve) => {
+        setTimeout(() => resolve("Data received"), 2000);
+    });
+}
+
+async function getData() {
+    const data = await fetchData();
+    console.log(data);
+}
+
+getData(); // 2 seconds बाद: Data received
+```
+
+---
+
+## 5️⃣ **Fetch API / Axios**
+
+* **Fetch API**: Browser में HTTP requests करने का तरीका।
+
+```javascript
+fetch('https://jsonplaceholder.typicode.com/todos/1')
+    .then(response => response.json())
+    .then(data => console.log(data));
+```
+
+* **Axios**: Fetch से आसान और ज्यादा features (npm install axios)
+
+```javascript
+import axios from 'axios';
+
+axios.get('https://jsonplaceholder.typicode.com/todos/1')
+    .then(response => console.log(response.data));
+```
+
+---
+
+## 6️⃣ **Event Loop**
+
+* JavaScript **single-threaded** है।
+* **Call Stack** और **Task Queue** का काम।
+* Async operations (setTimeout, fetch) **event loop** से handle होते हैं।
+
+```javascript
+console.log("Start");
+
+setTimeout(() => {
+    console.log("Timeout");
+}, 0);
+
+console.log("End");
+
+// Output:
+// Start
+// End
+// Timeout
+```
+
+---
+
+## 7️⃣ **Closures**
+
+* Function + उसके surrounding scope का combination।
+* Inner function outer function के variables access कर सकता है।
+
+```javascript
+function outer() {
+    let count = 0;
+    return function inner() {
+        count++;
+        console.log(count);
+    }
+}
+
+const counter = outer();
+counter(); // 1
+counter(); // 2
+```
+
+---
+
+## 8️⃣ **Hoisting**
+
+* JavaScript में **var और function declarations** ऊपर आ जाते हैं।
+
+```javascript
+console.log(a); // undefined
+var a = 5;
+
+foo(); // Hello
+function foo() {
+    console.log("Hello");
+}
+```
+
+* **let/const** hoisting में **temporal dead zone** होती है।
+
+```javascript
+console.log(b); // ❌ Error
+let b = 10;
+```
+
+---
+
+## 9️⃣ **this keyword**
+
+* **Global scope:** window/global object
+* **Object method:** उस object को refer करता है
+* **Arrow function:** lexical scope (parent का this)
+
+```javascript
+const obj = {
+    name: "Kajal",
+    sayName: function() {
+        console.log(this.name);
+    }
+};
+
+obj.sayName(); // Kajal
+```
+
+---

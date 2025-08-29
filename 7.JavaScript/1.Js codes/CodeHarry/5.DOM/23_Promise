@@ -1,0 +1,242 @@
+
+## 1. Promise kya hai?
+
+👉 **Promise ek JavaScript object hai jo future me ek value dene ka vada karta hai.**
+Ye value abhi turant available bhi ho sakti hai, ya thodi der baad (asynchronous).
+
+Jaise real life me:
+
+* Tumne online order kiya (Promise ban gaya ✅)
+* Courier wala 2-3 din me delivery karega (Pending ⏳)
+* Jab delivery mil gayi → **Resolved (Fulfilled)** 😀
+* Agar product deliver nahi hua (ya kharab hua) → **Rejected** 😞
+
+---
+
+## 2. Promise ke states (3 hote hai):
+
+1. **Pending** → Promise abhi chal raha hai, result nahi aaya
+2. **Resolved (Fulfilled)** → Result aa gaya, success
+3. **Rejected** → Error aa gaya
+
+---
+
+## 3. Syntax:
+
+```javascript
+let myPromise = new Promise((resolve, reject) => {
+    // async kaam
+    if (/* success */) {
+        resolve("Success value");
+    } else {
+        reject("Error aaya");
+    }
+});
+```
+
+* `resolve()` → jab kaam sahi ho jaye
+* `reject()` → jab kaam me error ho jaye
+
+---
+
+## 4. Use kaise karte hai?
+
+```javascript
+myPromise.then((value) => {
+    console.log("Success:", value);
+}).catch((error) => {
+    console.log("Error:", error);
+});
+```
+
+* `.then()` → jab promise **resolve** ho jaye
+* `.catch()` → jab promise **reject** ho jaye
+
+---
+
+## 5. Tumhare example se samjho:
+
+```javascript
+let P1 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        console.log("Resolve after 2 seconds");
+        resolve(56);
+    }, 2000);
+});
+
+P1.then((value) => {
+    console.log(value);
+});
+```
+
+### Step by Step Execution:
+
+1. `new Promise(...)` banta hai → **Pending** state me hai
+2. `setTimeout` chala → 2 sec wait karega
+3. 2 sec baad → `"Resolve after 2 seconds"` print karega aur `resolve(56)` call hoga
+4. Ab promise **Resolved** ho gaya → value `56` pass hogi
+5. `.then()` wala code chalega → `56` print hoga
+
+### Output:
+
+```
+Resolve after 2 seconds
+56
+```
+
+---
+
+
+
+ठीक है 👍 चलो **JavaScript Promise API** को अच्छे से समझते हैं।
+
+---
+
+## 🔹 Promise क्या है?
+
+Promise JavaScript का **asynchronous programming** handle करने का तरीका है।
+यह किसी async operation (जैसे API call, file read, timer) का **result future में देगा** – success (resolve) या failure (reject)।
+
+Promise के तीन states होते हैं:
+
+1. **Pending** → शुरू हुआ है पर खत्म नहीं हुआ।
+2. **Fulfilled (Resolved)** → Successfully complete हुआ।
+3. **Rejected** → Error आ गया या fail हो गया।
+
+---
+
+## 🔹 Promise बनाना
+
+```js
+let promise = new Promise((resolve, reject) => {
+    let success = true;
+
+    if (success) {
+        resolve("✅ Operation Successful");
+    } else {
+        reject("❌ Operation Failed");
+    }
+});
+```
+
+---
+
+## 🔹 Promise API Methods
+
+### 1. **`.then()`**
+
+* जब promise **resolve** होता है तब चलता है।
+
+```js
+promise.then(result => {
+    console.log(result);  // ✅ Operation Successful
+});
+```
+
+---
+
+### 2. **`.catch()`**
+
+* जब promise **reject** होता है तब चलता है।
+
+```js
+promise.catch(error => {
+    console.log(error);  // ❌ Operation Failed
+});
+```
+
+---
+
+### 3. **`.finally()`**
+
+* चाहे resolve हो या reject, यह हमेशा चलेगा।
+
+```js
+promise.finally(() => {
+    console.log("Promise finished (success or failure)");
+});
+```
+
+---
+
+### 4. **`Promise.all([ ... ])`**
+
+* Multiple promises को parallel चलाता है।
+* **सभी resolve होने पर ही resolve होता है**, एक भी reject हुआ तो पूरा reject।
+
+```js
+let p1 = Promise.resolve("P1 done");
+let p2 = Promise.resolve("P2 done");
+let p3 = Promise.resolve("P3 done");
+
+Promise.all([p1, p2, p3])
+    .then(values => console.log(values)) // ["P1 done", "P2 done", "P3 done"]
+    .catch(err => console.log(err));
+```
+
+---
+
+### 5. **`Promise.allSettled([ ... ])`**
+
+* सभी promises के settle होने का इंतज़ार करता है (चाहे resolve हो या reject)।
+* हमेशा result देता है।
+
+```js
+let p1 = Promise.resolve("P1 success");
+let p2 = Promise.reject("P2 failed");
+
+Promise.allSettled([p1, p2]).then(results => console.log(results));
+```
+
+👉 Output:
+
+```js
+[
+  { status: "fulfilled", value: "P1 success" },
+  { status: "rejected", reason: "P2 failed" }
+]
+```
+
+---
+
+### 6. **`Promise.race([ ... ])`**
+
+* सबसे पहले complete होने वाला promise result देगा (resolve/reject)।
+
+```js
+let p1 = new Promise(res => setTimeout(() => res("P1 done"), 1000));
+let p2 = new Promise(res => setTimeout(() => res("P2 done"), 500));
+
+Promise.race([p1, p2]).then(value => console.log(value)); // "P2 done"
+```
+
+---
+
+### 7. **`Promise.any([ ... ])`**
+
+* पहला **resolve** होने वाला promise result देगा।
+* अगर सारे reject हो गए तो `AggregateError` देगा।
+
+```js
+let p1 = Promise.reject("Fail 1");
+let p2 = Promise.resolve("Success 2");
+let p3 = Promise.resolve("Success 3");
+
+Promise.any([p1, p2, p3]).then(value => console.log(value)); // "Success 2"
+```
+
+---
+
+✅ Summary:
+
+* `.then()` → success handle
+* `.catch()` → error handle
+* `.finally()` → always run
+* `Promise.all` → all resolve required
+* `Promise.allSettled` → wait for all (resolve/reject)
+* `Promise.race` → first finished promise
+* `Promise.any` → first success
+
+---
+
+क्या आप चाहोगे मैं आपको **Promise API का एक real-world example (जैसे API call / fetch example)** भी बनाकर दूँ?

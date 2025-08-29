@@ -1,0 +1,1 @@
+document.getElementById("demo").innerText = "External JS connected!"

@@ -1,0 +1,42 @@
+
+2. DOM Insert Methods:-
+
+👉 HTML elements को **insert** करने के लिए JavaScript में ये methods हैं:
+
+1. **`append()`** → Element के अंदर **last child** के रूप में add करता है।
+
+   let div = document.querySelector("div");
+   let p = document.createElement("p");
+   p.textContent = "Hello";
+   div.append(p);
+
+
+2. **`prepend()`** → Element के अंदर **first child** के रूप में add करता है।
+
+   ```js
+   div.prepend(p);
+   ```
+
+3. **`before()`** → किसी element से **पहले** insert करता है।
+
+   ```js
+   div.before(p);
+   ```
+
+4. **`after()`** → किसी element के **बाद** insert करता है।
+
+   ```js
+   div.after(p);
+   ```
+
+5. **`insertBefore()`** (पुराना method)
+
+   ```js
+   let parent = document.querySelector("ul");
+   let newItem = document.createElement("li");
+   newItem.textContent = "Item Inserted";
+   let ref = parent.children[1]; // second element se pehle
+   parent.insertBefore(newItem, ref);
+   ```
+
+

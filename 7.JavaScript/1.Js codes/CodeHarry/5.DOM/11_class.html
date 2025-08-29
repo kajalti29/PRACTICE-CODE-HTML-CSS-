@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>className</title>
+    <style>
+        html, body{
+            height: 100%;
+            width: 100%;
+        }
+        .yellow{
+            background-color: yellow;
+            color: white;
+        }
+        .red{
+            background-color: red;
+            color:white
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="first" class="red">
+        <span> Hey I am good</span>
+    </div>
+    <script>
+        first.className = "text-black red"
+        first.classList.add("red")
+        first.classList.remove("red")
+        first.classList.contains("red")
+        true
+    </script>
+</body>
+</html>

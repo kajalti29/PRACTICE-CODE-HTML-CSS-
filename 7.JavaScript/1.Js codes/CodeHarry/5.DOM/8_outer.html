@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OuterHTML</title>
+</head>
+<body>
+
+<div id="box"><p>Hello</p></div>
+<script>
+  let box = document.getElementById("box");
+  console.log(box.outerHTML);   // <div id="box"><p>Hello</p></div>
+  box.outerHTML = "<section>New</section>"; // पूरा div बदल गया
+</script>
+
+</body>
+</html>

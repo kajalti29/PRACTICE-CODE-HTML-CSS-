@@ -1,0 +1,336 @@
+Important Topics:-
+
+Scope:- determines where a variable is accessible in your code.
+Scope यह बताता है कि कोई variable/code कहाँ से एक्सेस किया जा सकता है।
+
+Types of Scope:-
+1.Global Scope
+2.Local Scope(Function Scope)
+3.Block Scope
+
+1.Global Scope:-Variables declared outside of any function have global. Accessible anywhere in the code.
+(अगर कोई variable function के बाहर declare किया गया है तो वह सारे कोड में accessible होता है।)
+
+var name = "Kajal"; // Global Scope
+function greet() {
+    console.log(name); // Accessible here
+}
+greet();
+console.log(name); // Accessible here too
+
+
+2.Function Scope (Local Scope):-Variables declared inside a function are only accessible within that function.(जो variable function के अंदर declare किया गया है, वह केवल उसी function के अंदर accessible होता है।)
+
+function greet() {
+    var msg = "Hello!";
+    console.log(msg); // Works
+}
+greet();
+console.log(msg); // Error! msg is not defined
+
+3.Block Scope:-Introduced in ES6 with let and const.
+  Variables are only accessible inside the block { } they are declared in.
+
+
+if (true) {
+    let age = 25;
+    const city = "Delhi";
+    console.log(age, city); // काम करेगा
+}
+console.log(age); // Error! age defined नहीं है
+console.log(city); // Error! city defined नहीं है
+
+
+4.Hoisting in JavaScript:-
+
+Hoisting is JavaScript’s behavior of moving variable and function declarations to the top of their scope before code execution.
+
+Key Points:
+
+Only declarations are hoisted, not initializations.
+
+var is hoisted and initialized as undefined.
+
+### **1️⃣ Variable Hoisting**
+
+* **var** → केवल declaration hoist होती है, **initialization नहीं**।
+  Access करने पर declaration से पहले → `undefined`
+
+```javascript
+console.log(a); // undefined
+var a = 5;
+```
+
+* **let और const** → hoisted तो होती हैं लेकिन **Temporal Dead Zone (TDZ)** में रहती हैं। Declaration से पहले access → `ReferenceError`
+
+```javascript
+console.log(b); // ReferenceError
+let b = 10;
+```
+
+---
+
+### **2️⃣ Function Hoisting**
+
+* **Function Declaration** → पूरी तरह hoist हो जाती है। Call किया जा सकता है declaration से पहले।
+
+greet(); // "Hello"
+function greet() { console.log("Hello"); 
+
+}
+
+* **Function Expression** → केवल variable hoist होता है, function नहीं। Call करने पर **TypeError** आती है।
+
+
+sayHi(); // TypeError
+var sayHi = function() { console.log("Hi");
+ };
+
+
+
+*Closure:-
+        “A closure is a function that remembers its lexical scope, even when it is executed outside of that scope.”(“Closure एक ऐसा function है जो अपने lexical scope (यानि जिस जगह पर वो बना था, उसके variables और environment) को याद रखता है, भले ही उसे उस scope के बाहर execute किया जाए।”)
+
+Use of Closure:-
+Closure का use private data बनाने, state को preserve करने, callbacks/event handlers में values याद रखने और modular code लिखने के लिए किया जाता है।
+
+
+Outer Function का मतलब:-
+.जब हम एक function के अंदर दूसरा function बनाते हैं:
+.बाहर वाला function 👉 Outer Function
+.अंदर वाला function 👉 Inner Function
+
+👉 और जब inner function, outer function के variables को access करता है, तो इसे Closure कहते हैं।
+
+Closure Code बनाने के Steps:-
+
+1.एक Outer Function बनाओ।
+2.Outer function के अंदर कोई variable declare करो।
+3.Outer function के अंदर एक Inner function बनाओ।
+4.Inner function उस variable को use करे।
+5.Inner function को return कर दो।
+6.Outer function को call करके result use करो।
+
+#Basic Closure:-
+function outer() {          // Step 1
+    let a = 10;             // Step 2 (outer variable)
+
+    function inner() {      // Step 3
+        console.log(a);     // Step 4 (use outer variable)
+    }
+
+    return inner;           // Step 5
+}
+
+let myFunc = outer();       // Step 6
+myFunc();  // Output: 10
+
+
+
+1. Objects in JavaScript
+
+👉 Objects basically key–value pairs hote हैं.
+हर key ek property या method हो सकती है।
+
+let person = {
+    name: "Kajal",
+    age: 22,
+    city: "Indore",
+    
+    // Method (function inside object)
+    greet: function() {
+        return `Hello, my name is ${this.name}`;
+    }
+};
+
+console.log(person.name);   // Property access → Kajal
+console.log(person.greet()); // Method call → Hello, my name is Kajal
+
+
+
+
+#Methods of Objects:-
+
+Object methods :- keys(), values(), entries(), assign() etc.
+Example:-
+let student = {
+    id: 101,
+    name: "Aman"
+};
+
+// 🔹 Object.keys() → sabhi keys return karega
+      console.log(Object.keys(student));  
+; // ["id", "name"]
+
+// 🔹 Object.values() → sabhi values return karega
+      console.log(Object.values(student));  
+;   [101, "Aman"]
+
+// 🔹 Object.entries() → [key, value] pairs return karega
+      console.log(Object.entries(student));  
+; // [["id", 101], ["name", "Aman"]]
+
+// 🔹 Object.assign() → ek object ke properties dusre me copy karega
+let extra = { age: 20 };
+Object.assign(student, extra);
+console.log(student); 
+; // { id: 101, name: "Aman", age: 20 }
+
+
+
+## 3. **Regex (Regular Expressions) in JavaScript**
+
+👉 Regex ek **pattern** hai jo string ke andar **search, match, validate** karne ke liye use hota hai.
+
+### Syntax:
+
+```javascript
+let pattern = /abc/;   // literal notation
+let pattern2 = new RegExp("abc"); // constructor notation
+```
+
+---
+
+### Common Methods with Regex
+
+```javascript
+let str = "My number is 9876543210";
+
+// 🔹 test() → true/false return karega
+let regex1 = /\d{10}/;   // 10 digits ka pattern
+console.log(regex1.test(str));  
+// true
+
+// 🔹 match() → matched value return karega
+let result = str.match(/\d{10}/);
+console.log(result[0]);  
+// 9876543210
+
+// 🔹 replace() → match hone par replace karega
+let newStr = str.replace(/\d{10}/, "**********");
+console.log(newStr); 
+// My number is **********
+```
+
+---
+
+### Some Useful Regex Patterns
+
+* `\d` → digit (0-9)
+* `\w` → word character (a-z, A-Z, 0-9, \_)
+* `\s` → whitespace (space, tab, newline)
+* `+` → one or more
+* `*` → zero or more
+* `{n}` → exactly n times
+* `^` → start of string
+* `$` → end of string
+
+#### Example:
+
+```javascript
+let email = "test123@gmail.com";
+let emailPattern = /^[\w.-]+@[a-zA-Z]+\.[a-z]{2,3}$/;
+
+console.log(emailPattern.test(email)); 
+// true
+```
+
+1. setTimeout()
+
+👉 Ye function ek delay ke baad code execute karta hai (sirf ek बार चलेगा).
+
+Syntax: setTimeout(function, delay, param1, param2, ...);
+
+#Example
+console.log("Start");
+
+setTimeout(() => {
+    console.log("Hello after 2 seconds");
+}, 2000);
+
+console.log("End");
+
+#Start
+#End
+#Hello after 2 seconds
+
+
+2. setInterval()
+
+👉 Ye function ek fixed time interval par bar-bar code execute karta hai.
+
+Syntax:setInterval(function, interval, param1, param2, ...);
+
+
+let count = 1;
+
+let timer = setInterval(() => {
+    console.log("Message " + count);
+    count++;
+    
+    if (count > 5) {
+        clearInterval(timer); // Stop after 5 messages
+    }
+}, 1000); //Message 1 ,Message 2, Message 3, Message 4, Message 5
+
+
+Class:-
+      Class एक blueprint है, जिससे हम objects बना सकते हैं।
+     Objects में properties (data) और methods (functions) होते हैं।
+
+// Class बनाना
+class Person {
+  constructor(name, age) {
+    this.name = name; // property
+    this.age = age;   // property
+  }
+
+  // Method
+  greet() {
+    console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+  }
+}
+
+// Object बनाना
+let person1 = new Person("Kajal", 22);
+person1.greet(); // Output: Hello, my name is Kajal and I am 22 years old.
+
+
+Explanation:
+
+class Person → class का नाम Person है।
+constructor() → object बनते ही automatically call होता है।
+this.name, this.age → ये object की properties हैं।
+greet() → ये एक method है जिसे object call कर सकता है।
+
+
+Prototype:-
+
+JavaScript में हर object के पास एक hidden object होता है जिसे prototype कहते हैं।
+Prototype में वो methods और properties होती हैं जो object को inherited मिलती हैं।
+
+Simple words:
+Prototype = template या parent object जिससे objects feature inherit करते हैं।
+
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+// Prototype method add करना
+Person.prototype.greet = function() {
+  console.log(`Hello, my name is ${this.name}`);
+}
+
+let p1 = new Person("Kajal", 22);
+let p2 = new Person("Riya", 20);
+
+p1.greet(); // Hello, my name is Kajal
+p2.greet(); // Hello, my name is Riya
+
+important Topic:-
+Destructuring → Array/Object की values को आसानी से extract करना
+
+Spread → Array/Object को expand, copy, merge करना
+
+Rest → Function arguments को array में collect करना
