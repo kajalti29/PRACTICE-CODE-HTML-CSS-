@@ -1,16 +1,9 @@
+let user = {
+  name: "Kajal",
+  age: 22,
+  info: function() {
+    console.log(this.name + " is " + this.age + " years old");
+  }
+};
 
-function outer() {
-    let a = 10;
-
-    function inner(){
-        console.log(a);
-
-    }
-        return inner;
-    
-
-}
-    let newFunc = outer();
-    newFunc(); 
-
-
+user.info(); // Kajal is 22 years old

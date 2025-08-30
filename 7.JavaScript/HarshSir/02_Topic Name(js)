@@ -1,0 +1,213 @@
+
+## 1.Beginner Level (Basics)
+
+1. **Introduction to JavaScript**
+
+   * What is JavaScript?
+   * History & Features
+   * How JS runs (Browser + Node.js)
+   * Linking JS with HTML (Internal, External, Inline)
+
+2. **Variables & Constants**
+
+   * `var`, `let`, `const`
+   * Naming rules
+   * Hoisting basics
+
+3. **Data Types**
+
+   * Primitive (String, Number, Boolean, Null, Undefined, Symbol, BigInt)
+   * Non-Primitive (Object, Array, Function)
+
+4. **Operators**
+
+   * Arithmetic, Assignment
+   * Comparison (`==` vs `===`)
+   * Logical (`&&`, `||`, `!`)
+   * Ternary Operator
+   * Spread / Rest Operator
+
+5. **Type Conversion**
+
+   * Implicit (Type Coercion)
+   * Explicit (`Number()`, `String()`, `Boolean()`)
+
+---
+
+## 2.Intermediate Level
+
+6. **Control Flow**
+
+   * `if`, `else if`, `else`
+   * `switch`
+   * Truthy & Falsy values
+
+7. **Loops & Iteration**
+
+   * `for`, `while`, `do...while`
+   * `for...in`, `for...of`
+   * `break`, `continue`
+
+8. **Functions**
+
+   * Function Declaration vs Expression
+   * Parameters & Arguments
+   * Default Parameters
+   * Return statement
+   * Function Scope
+
+9. **Arrow Functions (ES6)**
+
+   * Syntax
+   * `this` keyword difference
+
+10. **Objects**
+
+    * Object literals
+    * Accessing properties (dot vs bracket)
+    * Adding / Deleting properties
+    * `Object.keys()`, `Object.values()`, `Object.entries()`
+
+11. **Arrays**
+
+    * Basic methods (`push`, `pop`, `shift`, `unshift`, `slice`, `splice`)
+    * Iteration (`forEach`, `map`, `filter`, `reduce`, `some`, `every`, `find`, `findIndex`)
+
+12. **Strings**
+
+    * Template literals
+    * String methods (`split`, `toUpperCase`, `trim`, `includes`, etc.)
+
+---
+
+## 3.Advanced Level
+
+13. **Scopes**
+
+    * Global Scope
+    * Function Scope
+    * Block Scope
+
+14. **Hoisting**
+
+    * Variable hoisting
+    * Function hoisting
+
+15. **Closures**
+
+    * Definition & examples
+    * Practical uses (Data privacy, Currying)
+
+16. **`this` Keyword**
+
+    * Global context
+    * Inside function
+    * Inside object
+    * Arrow functions
+
+17. **Prototype & Inheritance**
+
+    * `__proto__`
+    * Prototype chain
+    * ES6 `class` and `extends`
+
+18. **Destructuring & Spread**
+
+    * Array Destructuring
+    * Object Destructuring
+    * Rest operator
+    * Spread operator
+
+19. **Modules (ES6)**
+
+    * `export`, `import`
+    * Default vs Named exports
+
+20. **Asynchronous JS**
+
+    * Callback functions
+    * Promises (`.then`, `.catch`, `.finally`)
+    * `async` / `await`
+
+21. **Timers**
+
+    * `setTimeout`
+    * `setInterval`
+    * `clearTimeout` & `clearInterval`
+
+22. **Error Handling**
+
+    * `try`, `catch`, `finally`
+    * `throw`
+
+23. **Regular Expressions (Regex)**
+
+    * Pattern matching
+    * Common use cases (validation, searching)
+
+24. **Events**
+
+    * Event Listeners (`addEventListener`)
+    * Event Bubbling & Capturing
+    * Event Delegation
+
+---
+
+## 🔴 Expert / Interview Level
+
+25. **Advanced Data Structures**
+
+    * `Set`
+    * `Map`
+    * WeakSet & WeakMap
+
+26. **Advanced Concepts**
+
+    * Event Loop & Call Stack
+    * Microtasks & Macrotasks
+    * Debouncing & Throttling
+    * Currying
+    * Memoization
+
+27. **Advanced Object Concepts**
+
+    * Property Descriptors
+    * `Object.defineProperty`
+    * Proxies
+    * `Reflect`
+
+28. **Advanced Functions**
+
+    * Higher-Order Functions
+    * Pure Functions
+    * IIFE (Immediately Invoked Function Expression)
+
+29. **DOM Manipulation**
+
+    * Selecting elements (`getElementById`, `querySelector`)
+    * Changing content/style
+    * Creating/Removing nodes
+    * Traversing DOM
+
+30. **Storage**
+
+    * Local Storage
+    * Session Storage
+    * Cookies
+
+31. **Fetch API & AJAX**
+
+    * `fetch()`
+    * `async` / `await` with API calls
+    * JSON handling
+
+32. **ES6+ Features**
+
+    * Template literals
+    * Default parameters
+    * Optional chaining (`?.`)
+    * Nullish Coalescing (`??`)
+    * Dynamic Import
+
+---
+

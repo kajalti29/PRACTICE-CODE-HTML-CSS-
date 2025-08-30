@@ -1,0 +1,208 @@
+Got it 👍 You want **Array Methods in JavaScript**.
+I’ll give you a **clear list + explanation + examples + interview-focused tricks**.
+
+---
+
+# 🔹 JavaScript Array Methods
+
+## ✅ 1. Adding / Removing Elements
+
+* **push()** → Add at end
+
+```js
+let arr = [1, 2];
+arr.push(3);  
+console.log(arr); // [1,2,3]
+```
+
+* **pop()** → Remove last element
+
+```js
+arr.pop();  
+console.log(arr); // [1,2]
+```
+
+* **unshift()** → Add at beginning
+
+```js
+arr.unshift(0);  
+console.log(arr); // [0,1,2]
+```
+
+* **shift()** → Remove first element
+
+```js
+arr.shift();  
+console.log(arr); // [1,2]
+```
+
+---
+
+## ✅ 2. Searching / Checking
+
+* **indexOf()** → Find index of element
+
+```js
+["a","b","c"].indexOf("b"); // 1
+```
+
+* **lastIndexOf()** → Find last occurrence
+
+```js
+[1,2,3,2].lastIndexOf(2); // 3
+```
+
+* **includes()** → Check presence
+
+```js
+[1,2,3].includes(2); // true
+```
+
+* **find()** → First element matching condition
+
+```js
+[5,10,15].find(x => x > 9); // 10
+```
+
+* **findIndex()** → Index of first element matching
+
+```js
+[5,10,15].findIndex(x => x > 9); // 1
+```
+
+---
+
+## ✅ 3. Transforming / Iterating
+
+* **map()** → Creates new array by applying function
+
+```js
+[1,2,3].map(x => x*2); // [2,4,6]
+```
+
+* **filter()** → Keeps only matching elements
+
+```js
+[1,2,3,4].filter(x => x%2==0); // [2,4]
+```
+
+* **reduce()** → Reduce to single value
+
+```js
+[1,2,3,4].reduce((a,b)=>a+b,0); // 10
+```
+
+* **forEach()** → Loop through array
+
+```js
+[1,2,3].forEach(x => console.log(x));
+```
+
+---
+
+## ✅ 4. Sorting & Reversing
+
+* **sort()** → Sort (lexical by default)
+
+```js
+[10,2,30].sort(); // [10,2,30] → ["10","2","30"]
+[10,2,30].sort((a,b)=>a-b); // [2,10,30]
+```
+
+* **reverse()** → Reverse order
+
+```js
+[1,2,3].reverse(); // [3,2,1]
+```
+
+---
+
+## ✅ 5. Joining / Splitting
+
+* **join()** → Array → String
+
+```js
+["a","b","c"].join("-"); // "a-b-c"
+```
+
+* **concat()** → Merge arrays
+
+```js
+[1,2].concat([3,4]); // [1,2,3,4]
+```
+
+* **flat()** → Flatten nested arrays
+
+```js
+[1,[2,[3]]].flat(2); // [1,2,3]
+```
+
+---
+
+## ✅ 6. Extracting / Modifying
+
+* **slice(start, end)** → Copy portion (doesn’t change original)
+
+```js
+[1,2,3,4].slice(1,3); // [2,3]
+```
+
+* **splice(start, deleteCount, ...items)** → Add/remove/replace (modifies original)
+
+```js
+let arr = [1,2,3,4];
+arr.splice(1,2,"X"); // remove 2 elements from index 1, add "X"
+console.log(arr); // [1,"X",4]
+```
+
+---
+
+## ✅ 7. Other Useful Methods
+
+* **every()** → All elements match condition?
+
+```js
+[2,4,6].every(x=>x%2==0); // true
+```
+
+* **some()** → At least one matches?
+
+```js
+[1,3,5].some(x=>x%2==0); // false
+```
+
+* **from()** → Convert to array
+
+```js
+Array.from("abc"); // ["a","b","c"]
+```
+
+* **isArray()** → Check if array
+
+```js
+Array.isArray([1,2,3]); // true
+```
+
+* **fill()** → Fill with value
+
+```js
+new Array(3).fill(0); // [0,0,0]
+```
+
+---
+
+## 🔥 Tricky Interview Questions
+
+1. Difference between **slice()** and **splice()**?
+2. Why does `sort()` behave weirdly with numbers?
+
+   ```js
+   [1, 10, 2].sort(); // [1, 10, 2]
+   ```
+3. What’s the difference between **forEach()** and **map()**?
+4. Can you flatten an array without using `flat()`?
+5. What happens when you use **delete arr\[index]** vs **splice(index,1)**?
+
+---
+
+👉 Do you want me to prepare a **table (cheat sheet) of all array methods with short notes + examples** so you can revise quickly for interviews?

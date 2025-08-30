@@ -1,0 +1,260 @@
+
+## 🔹 1. What is a Function?
+
+A **function** is a block of code that performs a specific task.
+👉 We write it once and reuse it many times.
+👉 It improves code reusability, readability, and maintainability.
+
+---
+
+## 🔹 2. Syntax of a Function
+
+```js
+function functionName(parameters) {
+  // code to be executed
+  return value;  // (optional)
+}
+```
+
+---
+
+## 🔹 3. Types of Functions in JavaScript
+
+### ✅ (a) Function Declaration (Named Function)
+
+```js
+function greet() {
+  console.log("Hello World!");
+}
+greet(); // calling the function
+```
+
+---
+
+### ✅ (b) Function with Parameters
+
+```js
+function add(a, b) {
+  return a + b;
+}
+console.log(add(5, 3)); // 8
+```
+
+---
+
+### ✅ (c) Function Expression
+
+(A function assigned to a variable)
+
+```js
+let multiply = function (x, y) {
+  return x * y;
+};
+console.log(multiply(4, 5)); // 20
+```
+
+---
+
+### ✅ (d) Arrow Function (ES6)
+
+(Shorter syntax)
+
+```js
+let square = (n) => n * n;
+console.log(square(6)); // 36
+```
+
+---
+
+### ✅ (e) Anonymous Function
+
+(Function without a name, mostly used as callbacks)
+
+```js
+setTimeout(function() {
+  console.log("This runs after 2 seconds");
+}, 2000);
+```
+
+---
+
+### ✅ (f) Immediately Invoked Function Expression (IIFE)
+
+(Runs immediately after creation)
+
+```js
+(function () {
+  console.log("IIFE executed!");
+})();
+```
+
+---
+
+## 🔹 4. Important Concepts with Functions
+
+1. **Default Parameters**
+
+```js
+function greet(name = "Guest") {
+  console.log("Hello " + name);
+}
+greet();         // Hello Guest
+greet("Kajal");  // Hello Kajal
+```
+
+2. **Rest Parameters**
+
+```js
+function sum(...numbers) {
+  return numbers.reduce((a, b) => a + b, 0);
+}
+console.log(sum(1, 2, 3, 4)); // 10
+```
+
+3. **Return vs. Console**
+
+* `return` → sends value back to caller
+* `console.log` → just prints it on screen
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+## 🔹 5. Higher-Order Functions
+
+Functions that take other functions as arguments or return functions.
+
+```js
+function calculate(x, y, operation) {
+  return operation(x, y);
+}
+let result = calculate(5, 3, (a, b) => a + b);
+console.log(result); // 8
+```
+
+---
+
+👉 In interviews, questions often come like:
+
+* Difference between function declaration & expression:-Declaration is hoisted, expression is not.
+* Arrow function vs normal function
+* Callback & higher-order functions
+* What is IIFE?
+* Rest vs Spread with functions
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Hosting:- JavaScript पहले variables और functions को memory में allocate कर देता है, फिर code execute होता है।
+
+## this:-
+Hum this ka use karte hain taaki function ke andar object ka naam hardcode na karna pade, aur code reusable + flexible ho jaye.
+
+(this keyword is used to refer to the current object.It helps us avoid hardcoding object names, makes functions reusable, and is very useful in objects, constructors, classes, and event handling.
+)
+
+1.
+let user = {
+  name: "Kajal",
+  sayHi: function() {
+    console.log("Hi " + this.name);
+  }
+};
+user.sayHi(); // Hi Kajal
+
+2.
+let user = {
+  name:"kaju",
+  age :21,
+  info : function(){
+    console.log(this.name + "is" + this.age + "years old);
+  }
+};
+
+user.infor();
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+# 🔹 1. `__proto__`
+
+👉 Har JavaScript object ke paas ek hidden property hoti hai `__proto__`, jo uske parent (prototype) object ko point karti hai.
+Ye **link banata hai object aur uske parent ke beech**.
+
+```js
+let person = { name: "Kajal" };
+console.log(person.__proto__);  
+// Output → Object.prototype
+```
+
+⚡ Matlab: `person` object ka prototype hai `Object.prototype`.
+
+---
+
+# 🔹 2. Prototype Chain
+
+👉 Jab aap kisi property/method ko access karte ho:
+
+* Sabse pehle JavaScript **object khud ke andar dhundhta hai**.
+* Agar nahi mila, to **uske prototype (`__proto__`) me dhundhta hai**.
+* Ye process upar tak chalta hai → isko **Prototype Chain** bolte hain.
+
+### Example:
+
+```js
+let arr = [1, 2, 3];
+
+console.log(arr.toString());  
+// arr ke andar toString nahi hai,
+// so JS goes to Array.prototype → waha mil jata hai
+
+console.log(arr.__proto__ === Array.prototype); // true
+console.log(Array.prototype.__proto__ === Object.prototype); // true
+console.log(Object.prototype.__proto__); // null (end of chain)
+```
+
+⚡ Chain:
+`arr → Array.prototype → Object.prototype → null`
+
+---
+
+# 🔹 3. ES6 `class` and `extends`
+
+👉 ES6 me `class` aur `extends` aaya jo prototype-based inheritance ko **clean syntax** deta hai.
+
+### Example: Class with constructor
+
+```js
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+  greet() {
+    console.log("Hello, " + this.name);
+  }
+}
+
+let p1 = new Person("Kajal");
+p1.greet(); // Hello, Kajal
+```
+
+### Example: Inheritance with `extends`
+
+```js
+class Animal {
+  speak() {
+    console.log("Animal makes a sound");
+  }
+}
+
+class Dog extends Animal {
+  speak() {
+    console.log("Dog barks");
+  }
+}
+
+let d = new Dog();
+d.speak();  // Dog barks
+```
+
+👉 Yaha `Dog` ne `Animal` ka prototype inherit kiya. Agar `Dog` me method na ho to wo `Animal` se milega.
+
