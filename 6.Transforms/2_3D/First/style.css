@@ -1,0 +1,79 @@
+/* Page styling */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+    color: #333;
+    perspective: 1000px; /* Needed for 3D transforms */
+}
+
+h1 {
+    margin-bottom: 50px;
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* Container grid */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    gap: 25px;
+}
+
+/* Box styling */
+.box {
+    width: 150px;
+    height: 150px;
+    background-color: #ff6b6b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+    text-align: center;
+    transition: transform 0.6s ease, background-color 0.5s ease;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Hover effects for 3D transforms */
+.translateZ:hover {
+    transform: translateZ(60px);
+    background-color: #ff9f43;
+}
+
+.rotateX:hover {
+    transform: rotateX(45deg);
+    background-color: #1dd1a1;
+}
+
+.rotateY:hover {
+    transform: rotateY(45deg);
+    background-color: #48dbfb;
+}
+
+.rotateZ:hover {
+    transform: rotateZ(45deg);
+    background-color: #341f97;
+}
+
+.scale3d:hover {
+    transform: scale3d(1.4, 1.4, 1.4);
+    background-color: #f368e0;
+}
+
+.rotate3d:hover {
+    transform: rotate3d(1, 1, 0, 60deg);
+    background-color: #00d2d3;
+}
+
+.perspective:hover {
+    transform: perspective(400px) rotateY(45deg) rotateX(20deg);
+    background-color: #ee5253;
+}

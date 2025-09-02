@@ -1,0 +1,379 @@
+
+## 🔹 1. Variables (Data Store करने के लिए)
+var name = "Kajal";   // old way
+let age = 21;         // modern way (block scope)
+const pi = 3.14;      // constant (change नहीं कर सकते)
+```
+
+## Variables & Constants:-
+ var:- - Function scoped, can be re-declared & updated, hoisted.
+ let:-  Block scoped, can be updated but not re-declared.
+const:-  Block scoped, cannot be updated or re-declared (immutable reference).
+
+# Variable Naming Rules: 
+                      No spaces, can’t start with numbers, no reserved keywords.
+------------------------------------------------------------------------------------------------------------------------------------------
+
+## 🔹 2. Data Types:-
+Their are Two types:-
+1.Primitive Data Types
+
+* String → `"Hello"`
+* Number → `10, 3.14`
+* Boolean → `true / false`
+* Null → `null`
+* Undefined → `let x;`
+* symbol -> `symbol('id')`
+* BigInt -> `123456789012345678901234567890n`
+
+2. Non-Primitive Data Types:-
+* Object → `{ key: "value" }`
+* Array → `[1,2,3,4]`
+* Function -> function greet(){ 
+                    console.log("Hello"); 
+                    }
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+##typeof operator से data type पता कर सकते हैं:
+
+console.log(typeof 100); // "number"
+console.log(typeof "Hello"); // "string"
+console.log(typeof true); // "boolean"
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+## 🔹 3. Operators
+
+ #1️⃣ Arithmetic Operators 
+```javascript
+let a = 10,
+let b = 5;
+console.log(a + b);  // 15 (Addition)
+console.log(a - b);  // 5
+console.log(a * b);  // 50
+console.log(a / b);  // 2
+console.log(a % b);  // 0 (modulus / remainder)
+console.log(a ** b); // 100000
+```
+-----------------------------------------------------------------------------------------------------------------------------------------------
+# 2.Basic Assignment Operator(=)
+Explanation: Assigns the value to the variable.
+let a = 10;
+console.log("a =", a);  // 10
+
+a += 5;  // a = a + 5
+console.log("Addition Assignment a += 5 →", a);  // 15
+
+a -= 3;  // a = a - 3
+console.log("Subtraction Assignment a -= 3 →", a);  // 12
+
+a *= 2;  // a = a * 2
+console.log("Multiplication Assignment a *= 2 →", a);  // 24
+
+a /= 4;  // a = a / 4
+console.log("Division Assignment a /= 4 →", a);  // 6
+
+a %= 5;  // a = a % 5
+console.log("Modulus Assignment a %= 5 →", a);  // 1
+
+a **= 3;  // a = a ** 3
+console.log("Exponentiation Assignment a **= 3 →", a);  // 1
+----------------------------------------------------------------------------------------------------------------------------------------
+
+#  3.Comparison operator:
+
+```javascript
+let a = 10;
+let b = "10";
+let c = 5;
+
+console.log("a == b:", a == b);       // true, values equal
+console.log("a === b:", a === b);     // false, value same but type different
+console.log("a != c:", a != c);       // true, 10 is not equal to 5
+console.log("a !== b:", a !== b);     // true, type different
+console.log("a > c:", a > c);         // true, 10 > 5
+console.log("a < c:", a < c);         // false, 10 < 5? no
+console.log("a >= 10:", a >= 10);     // true, 10 >= 10
+console.log("c <= 5:", c <= 5);       // true, 5 <= 5
+```
+----------------------------------------------------------------------------------------------------------------------------------------------
+#  4.Logical operators:
+
+```javascript
+console.log(true && false); // false
+console.log(true || false); // true
+console.log(!true);         // false
+```
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+# Ternary Operator (? :):-
+It is a shorthand for if…else.
+
+condition ? expression_if_true : expression_if_false;
+
+let age = 18;
+let result = (age >= 18) ? "You are an adult" : "You are a minor";
+console.log(result);
+
+ # Nested Ternary Example:
+let marks = 75;
+let grade = (marks >= 90) ? "A+" 
+           : (marks >= 75) ? "A" 
+           : (marks >= 50) ? "B" 
+           : "Fail";
+
+console.log("Grade:", grade);
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+## 🔹 5. Conditions Statement:-
+
+# 1. if Statement:- if statement तब execute होता है जब condition true हो।
+
+; if (condition) {
+;     // code to execute if condition is true
+; }
+
+# Example:
+```javascript
+let age = 18;
+if(age >= 18){
+  console.log("You can vote")
+}
+````
+
+`````javascript
+let a = 10;
+if (a > 5) {
+    console.log("a is greater than 5"); //a is greater than 5
+}
+`````
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+# 2. if…else Statement:- if false होने पर else वाला block run होगा।
+
+; if (condition) {
+;     // code if true
+; } else {
+;     // code if false
+; }
+
+Example
+````JS
+let age = 18;
+if(age >= 18){
+  console.log("You can vote");
+}else{
+  console.log("You can not vote");
+}
+````
+
+`````JS
+let a = 3;
+
+if (a > 5) {
+    console.log("a is greater than 5");
+} else {
+    console.log("a is 5 or less"); //a is 5 or less
+}
+````
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+# 3. if…else if…else Statement:-else if multiple conditions check करने के लिए use होता है।
+
+if (condition1) {
+    // code1
+} else if (condition2) {
+    // code2
+} else {
+    // code3
+}
+
+```javascript
+let marks = 75;
+
+if (marks >= 90) {
+  console.log("A Grade");
+} else if (marks >= 60) {
+  console.log("B Grade");
+} else {
+  console.log("C Grade");
+}
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+## 🔹 6. Loops
+
+```javascript
+// for loop
+for (let i = 1; i <= 5; i++) {
+  console.log("Value of i: " + i);
+};
+
+# Output:
+Value of i: 1
+Value of i: 2
+Value of i: 3
+Value of i: 4
+Value of i: 5
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+// while loop
+let j = 1;
+while (j <= 3) {
+  console.log("Hello " + j);
+  j++;
+}
+```
+// do…while Loop
+let i = 1;
+do {
+    console.log("i is:", i);
+    i++;
+} while(i <= 5);
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+// for…in Loop (for objects)
+# ye object ke keys pr iterate karta hai.
+
+; for (key in object) {
+;     // code
+; }
+
+let person = {
+  name: "Alice", 
+  age: 25
+  };
+for (let key in person) {
+    console.log(key, ":", person[key]);
+}
+
+# Output
+name : Alice
+age : 25
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+// for…of Loop (for arrays/iterables):-
+
+let arr = [10, 20, 30];
+for (let value of arr) {
+    console.log(value);
+}
+
+# Output
+10
+20
+30
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+#Important Statement in for Loops
+1.Break Statement:-
+
+for(i = 1; i<=5; i++){
+ if(i === 3){
+  Break;
+ }
+ console.log(i);
+  }
+
+#Output:-
+        1
+        2 //2 ke bad loop ruk gya
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+1. Continue statement:-
+
+for(i = 1; i<=5; i++){
+ if(i === 3){
+  Continue;
+ }
+ console.log(i);
+  }
+
+
+#Output
+     1
+     2
+
+     4
+     5
+-------------------------------------------------------------------------------------------------------------------------------------------
+3. Return statement:-
+
+for(i = 1; i<=5; i++){
+ if(i === 3){
+  return "stopped at 3"
+ }
+ console.log(i);
+  }
+
+#Output:-
+        1
+        2
+        stopped at 3
+-------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+## 🔹 6. Functions
+
+```javascript
+function greet(name) {
+  return "Hello " + name;
+}
+console.log(greet("Kajal")); // Hello Kajal
+
+```
+
+Arrow function:
+
+```javascript
+const add = (x, y) => x + y;
+console.log(add(5, 3)); // 8
+```
+
+---
+
+## 🔹 7. Arrays
+
+```javascript
+let fruits = ["Apple", "Banana", "Mango"];
+console.log(fruits[0]);  // Apple
+fruits.push("Orange");   // Add
+console.log(fruits.length); // 4
+```
+
+---
+
+## 🔹 8. Objects
+
+```javascript
+let person = {
+  name: "Kajal",
+  age: 21,
+  city: "Delhi"
+};
+
+console.log(person.name); // Kajal
+```
+
+---
+
+## 🔹 9. DOM Manipulation (Webpage ke saath kaam)
+
+```html
+<h2 id="title">Hello</h2>
+<button onclick="changeText()">Click Me</button>
+
+<script>
+function changeText() {
+  document.getElementById("title").innerText = "Text Changed!";
+}
+</script>

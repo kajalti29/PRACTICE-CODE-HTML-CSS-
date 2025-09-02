@@ -1,0 +1,443 @@
+
+# 📌 HTML Interview Questions
+
+### 1. What is the difference between HTML and HTML5?
+
+✅ **Answer:**
+
+* HTML is the standard markup language for web pages.
+* HTML5 is the latest version with new semantic elements (`<header>`, `<section>`, `<article>`, etc.), multimedia support (`<audio>`, `<video>`), canvas/SVG, local storage, geolocation, and form controls.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+### 2. What are semantic tags in HTML?
+
+✅ **Answer:**
+Semantic tags describe the meaning of the content.
+Examples:
+
+```html
+<header> - for page header
+<nav> - for navigation links
+<main> - main content
+<section> - a section of content
+<article> - independent content (like a blog post)
+<footer> - page footer
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+### 3. Difference between `id` and `class` in HTML?
+
+✅ **Answer:**
+
+* `id` is unique (used once in a page).
+* `class` can be used multiple times.
+  Example:
+
+```html
+<p id="unique">Hello</p>
+<p class="highlight">World</p>
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### 4. What is the difference between inline, block, and inline-block elements?
+
+✅ **Answer:**
+
+* **Block:** takes full width (`<div>`, `<p>`, `<h1>`).
+* **Inline:** takes only content width (`<span>`, `<a>`).
+* **Inline-block:** acts like inline but allows margin/padding.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### 5. Difference between LocalStorage, SessionStorage, and Cookies?
+
+✅ **Answer:**
+
+* **LocalStorage:** stores data permanently in browser (until cleared).
+* **SessionStorage:** stores data until the browser tab is closed.
+* **Cookies:** small data stored in browser + sent to server with each request.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# 📌 CSS Interview Questions
+
+### 1. Difference between relative, absolute, fixed, and sticky positioning?
+
+✅ **Answer:**
+
+* **Relative:** moves element relative to its normal position.
+* **Absolute:** positioned relative to nearest positioned ancestor.
+* **Fixed:** stays in same position even when scrolling.
+* **Sticky:** behaves like relative but becomes fixed when you scroll past it.
+
+Relative: अपनी नॉर्मल पोज़िशन से शिफ्ट होता है।
+Absolute: अपने parent (जिसमें position दी गई हो) के हिसाब से सेट होता है।
+Fixed: हमेशा स्क्रीन पर फिक्स रहता है (स्क्रॉल करने पर भी)।
+Sticky: स्क्रॉल करने पर ऊपर चिपक जाता है।
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### 2. Difference between `em`, `rem`, `%`, `px` in CSS?
+
+✅ **Answer:**
+
+* `px`: fixed pixels.
+* `em`: relative to parent font-size.
+* `rem`: relative to root (html) font-size.
+* `%`: relative to parent element.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### 3. What is the difference between inline, internal, and external CSS?
+
+✅ **Answer:**
+
+* **Inline CSS:** inside tag using `style`.
+* **Internal CSS:** inside `<style>` in `<head>`.
+* **External CSS:** in a separate `.css` file linked via `<link>`.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### 4. Difference between relative units (`em`, `rem`) and absolute units (`px`, `pt`)?
+
+✅ **Answer:**
+
+* Absolute units don’t scale (px, pt).
+* Relative units scale with screen size (em, rem, %).
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### 5. What is the difference between Flexbox and Grid?
+
+✅ **Answer:**
+
+* **Flexbox:** one-dimensional layout (row OR column).
+* **Grid:** two-dimensional layout (rows AND columns).
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# 📌 Practical Coding Questions
+
+### Q1: How do you center a div in CSS?(Div को सेंटर कैसे करेंगे?)
+
+✅ **Answer:**
+
+```css
+.parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### Q2: Create a responsive image.
+
+✅ **Answer:**
+
+```css
+img {
+  max-width: 100%;
+  height: auto;
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### Q3: Create a sticky navbar using CSS.
+
+✅ **Answer:**
+
+```css
+nav {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  padding: 10px;
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### Q4: Difference between `relative` and `absolute` position with example.
+
+✅ **Answer:**
+
+```html
+<div class="parent">
+  Parent
+  <div class="child">Child</div>
+</div>
+```
+
+```css
+.parent { position: relative; width: 200px; height: 200px; background: lightblue; }
+.child  { position: absolute; bottom: 10px; right: 10px; background: orange; }
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### Q5: How to create a CSS gradient background?
+
+✅ **Answer:**
+
+```css
+body {
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+```---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. Difference between Attributes and Properties?
+
+✅ Attribute → Written in the HTML tag (example: <input type="text">).
+✅ Property → The DOM object’s value in JavaScript (example: input.value = "abc").
+
+----------------------------------------------------------------------------------------------------------
+3. Difference between <span> and <div>?
+✅ <span> → Inline element.
+✅ <div> → Block element.
+
+---------------------------------------------------------------------------------------------------------------
+4. What is an <iframe>?
+✅ किसी और वेबपेज को अपने पेज में embed करने के लिए।
+✅ Used to embed another webpage inside the current page.
+
+--------------------------------------------------------------------------------------------------------------------
+
+5.Forms में GET और POST method में अंतर?
+
+✅ GET: डेटा URL में दिखता है, छोटा और non-secure।
+✅ POST: डेटा URL में नहीं दिखता, secure और बड़ा डेटा भेज सकता है।
+   GET: Data is visible in the URL, less secure, limited size.
+✅ POST: Data is hidden from URL, more secure, can send large data.
+
+----------------------------------------------------------------------------------------------------------------
+6. HTML5 के नए Input Types?
+✅ email, url, date, time, number, range, color, search
+---------------------------------------------------------------------------------------------------------------
+
+7. <link> और <a> में अंतर?
+✅ <link> → external resource (CSS, favicon) जोड़ने के लिए।
+✅ <a> → hyperlink बनाने के लिए।
+
+-----------------------------------------------------------------------------------------------------------------
+
+### 8. Progressive Enhancement और Graceful Degradation?
+
+✅ **Progressive Enhancement:** पहले basic features, फिर modern browsers के लिए advanced features add करना।
+✅ **Graceful Degradation:** पहले advanced version बनाना और पुराने browsers में उसका simplified version दिखाना।
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+# 🎨 CSS Questions with Answers:-
+======================================>
+
+### 2. Pseudo-classes और Pseudo-elements में अंतर?
+
+✅ **Pseudo-class:** किसी element की state (जैसे `:hover`, `:nth-child(2)`)
+✅ **Pseudo-element:** किसी element के part पर effect डालता है (`::before`, `::after`)
+
+-----------------------------------------------------------------------------------------------------------------------
+
+### 3. Z-index कैसे काम करता है?
+
+✅ Elements को stack करने के लिए (कौन ऊपर और कौन नीचे दिखेगा)।
+Default value = 0, बड़ा z-index → ऊपर दिखाई देगा।
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### 4. `inline`, `inline-block`, `block` में फर्क?
+
+* **block** → पूरी चौड़ाई लेता है।
+* **inline** → सिर्फ content की जगह लेता है।
+* **inline-block** → inline रहता है लेकिन block properties (width, height, margin, padding) use कर सकते हैं।
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### 5. Relative units और Absolute units में फर्क?
+
+✅ **Absolute (px, pt):** fix रहते हैं।
+✅ **Relative (%, em, rem):** parent या root size के हिसाब से बदलते हैं।
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### 6. Media Queries क्या हैं?
+
+✅ Responsive design बनाने के लिए (screen size के हिसाब से CSS apply करना)।
+
+```css
+@media (max-width: 768px) {
+  body { background: lightblue; }
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### 7. CSS Preprocessors (SASS/LESS) क्या हैं?
+
+✅ CSS को advanced बनाने वाले tools → variables, nesting, mixins allow करते हैं।
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### 8. `transform`, `transition`, और `animation` का फर्क?
+
+* **transform:** element को move/scale/rotate/skew करना।
+* **transition:** एक state से दूसरी state में smooth change।
+* **animation:** keyframes के साथ complex movements।
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### 9. `overflow` property का उपयोग कहाँ होता है?
+
+✅ जब content container से बाहर चला जाए।
+Values: `visible`, `hidden`, `scroll`, `auto`
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### 10. Responsive Web Design (RWD) के 3 principles?
+1. Fluid Grid (percentage-based layout)
+2. Flexible Images (responsive images)
+3. Media Queries (screen-size specific CSS)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+# 🌐 Extra HTML Questions with Answers
+
+### 1. What are Semantic tags and why are they important?
+
+**English:** Semantic tags clearly describe the meaning of content (e.g., `<header>`, `<footer>`, `<article>`). They help in SEO and accessibility.
+**Hindi:** Semantic tags ऐसे टैग होते हैं जो content का meaning बताते हैं (जैसे `<header>`, `<footer>`, `<article>`). ये SEO और accessibility में मदद करते हैं।
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### 2. Difference between LocalStorage, SessionStorage, and Cookies?
+
+**English:**
+
+* LocalStorage → Stores data permanently (until cleared).
+* SessionStorage → Stores data until tab/browser is closed.
+* Cookies → Small data stored, also sent with every server request.
+
+**Hindi:**
+
+* LocalStorage → डेटा हमेशा store रहता है (जब तक manually delete न हो)।
+* SessionStorage → डेटा tab/browser बंद होते ही हट जाता है।
+* Cookies → छोटा data store होता है और हर server request के साथ भेजा जाता है।
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### 3. Difference between `<canvas>` and `<svg>`?
+
+**English:**
+
+* `<canvas>` → Pixel-based, good for games/animations.
+* `<svg>` → Vector-based, good for scalable graphics like logos.
+
+**Hindi:**
+
+* `<canvas>` → Pixel-based होता है, games/animations के लिए अच्छा।
+* `<svg>` → Vector-based होता है, scalable graphics (जैसे logo) के लिए अच्छा।
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### 4. What is Shadow DOM?
+
+**English:** A way to isolate styles and scripts of a component so they don’t affect outside elements (used in Web Components).
+**Hindi:** Shadow DOM component का style और script अलग करता है ताकि बाहर वाले elements पर असर न पड़े (Web Components में use होता है)।
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### 5. What is a Progressive Web App (PWA)?
+
+**English:** A web app that works like a native app (offline support, installable, push notifications).
+**Hindi:** Progressive Web App एक web app है जो mobile app जैसा काम करता है (offline चलता है, install हो सकता है, push notifications देता है)।
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# 🎨 Extra CSS Questions with Answers
+
+### 1. What is Flexbox and its main properties?
+
+**English:** Flexbox is a CSS layout model for aligning elements in rows/columns.
+Main properties: `display:flex`, `justify-content`, `align-items`, `flex-wrap`, `flex-direction`.
+**Hindi:** Flexbox एक CSS layout system है जिससे elements को row/column में easily arrange करते हैं।
+Main properties: `display:flex`, `justify-content`, `align-items`, `flex-wrap`, `flex-direction`.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### 2. What is CSS Grid and how is it different from Flexbox?
+
+**English:** CSS Grid is for two-dimensional layouts (rows + columns). Flexbox is mostly one-dimensional (row OR column).
+**Hindi:** CSS Grid 2D layout (row और column दोनों) के लिए है। Flexbox 1D layout (row या column) के लिए है।
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### 3. Explain Position property (static, relative, absolute, fixed, sticky).
+
+**English:**
+
+* static → Default (normal flow).
+* relative → Moves element relative to itself.
+* absolute → Positioned relative to parent.
+* fixed → Stays fixed on screen.
+* sticky → Acts like relative but sticks when scrolling.
+
+**Hindi:**
+
+* static → Default, normal जगह।
+* relative → अपनी जगह से थोड़ा move।
+* absolute → Parent के हिसाब से set।
+* fixed → स्क्रीन पर fixed रहता है।
+* sticky → Scroll करने पर चिपक जाता है।
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### 4. How to make responsive images?
+
+**English:** Use `max-width:100%`, `height:auto`, or HTML attributes like `srcset` and `<picture>` tag.
+**Hindi:** Responsive images के लिए `max-width:100%`, `height:auto` या HTML में `srcset` और `<picture>` tag use करते हैं।
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### 5. What are CSS Variables?
+
+**English:** Custom properties defined with `--` and reused.
+Example:
+
+```css
+:root { --main-color: blue; }
+div { color: var(--main-color); }
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### 7. Difference between Inline CSS, Internal CSS, and External CSS?
+
+**English:**
+
+* Inline → Written inside element (`style=""`).
+* Internal → Written inside `<style>` in the same page.
+* External → Written in a separate CSS file and linked.
+
+**Hindi:**
+
+* Inline → Element के अंदर `style=""` लिखते हैं।
+* Internal → `<style>` टैग में उसी पेज पर।
+* External → अलग CSS file बनाकर link करते हैं।
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### 8. How to make a website mobile-friendly?
+
+**English:**
+
+* Use responsive layout (flexbox, grid).
+* Use media queries.
+* Use responsive images.
+* Avoid fixed widths.
+
+**Hindi:**
+
+* Responsive layout (flexbox, grid) use करो।
+* Media queries लगाओ।
+* Responsive images use करो।
+* Fixed width avoid करो।
+
+

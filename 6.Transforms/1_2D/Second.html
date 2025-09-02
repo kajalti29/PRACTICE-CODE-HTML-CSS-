@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2D Transform Demo</title>
+<link rel="stylesheet" href="style.css">
+<style>
+    body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f6d365, #fda085);
+    color: #333;
+}
+
+h1 {
+    margin-bottom: 40px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    gap: 20px;
+}
+
+.box {
+    width: 120px;
+    height: 120px;
+    background-color: #6a82fb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.5s ease, background-color 0.5s ease;
+    cursor: pointer;
+}
+
+/* Hover effects for each transform */
+.translate:hover {
+    transform: translate(50px, 30px);
+    background-color: #ff6b6b;
+}
+
+.rotate:hover {
+    transform: rotate(45deg);
+    background-color: #ff9f43;
+}
+
+.scaleX:hover {
+    transform: scaleX(1.5);
+    background-color: #48dbfb;
+}
+
+.scaleY:hover {
+    transform: scaleY(1.5);
+    background-color: #10ac84;
+}
+
+.scale:hover {
+    transform: scale(1.5);
+    background-color: #341f97;
+}
+
+.skewX:hover {
+    transform: skewX(20deg);
+    background-color: #ee5253;
+}
+
+.skewY:hover {
+    transform: skewY(20deg);
+    background-color: #00d2d3;
+}
+
+.skew:hover {
+    transform: skew(15deg, 10deg);
+    background-color: #f368e0;
+}
+
+.matrix:hover {
+    transform: matrix(1, 0.5, -0.5, 1, 30, 20);
+    background-color: #ff6b6b;
+}
+
+</style>
+</head>
+<body>
+
+<h1>2D Transform Demo</h1>
+
+<div class="container">
+    <div class="box translate">Translate</div>
+    <div class="box rotate">Rotate</div>
+    <div class="box scaleX">ScaleX</div>
+    <div class="box scaleY">ScaleY</div>
+    <div class="box scale">Scale</div>
+    <div class="box skewX">SkewX</div>
+    <div class="box skewY">SkewY</div>
+    <div class="box skew">Skew</div>
+    <div class="box matrix">Matrix</div>
+</div>
+
+</body>
+</html>

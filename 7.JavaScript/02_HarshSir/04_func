@@ -1,0 +1,716 @@
+
+## 🔹 1. What is a Function?
+
+A **function** is a block of code that performs a specific task.
+👉 We write it once and reuse it many times.
+👉 It improves code reusability, readability, and maintainability.
+
+---
+
+## 🔹 2. Syntax of a Function
+
+```js
+function functionName(parameters) {
+  // code to be executed
+  return value;  // (optional)
+}
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+## 🔹 3. Types of Functions in JavaScript
+
+### ✅ (a) Function Declaration (Named Function)
+
+```js
+function greet() {
+  console.log("Hello World!");
+}
+greet(); // calling the function
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+
+### ✅ (b) Function with Parameters
+
+```js
+function add(a, b) {
+  return a + b;
+}
+console.log(add(5, 3)); // 8
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+
+### ✅ (c) Function Expression
+
+(A function assigned to a variable)
+
+```js
+let multiply = function (x, y) {
+  return x * y;
+};
+console.log(multiply(4, 5)); // 20
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+
+### ✅ (d) Arrow Function (ES6)
+
+(Shorter syntax)
+
+```js
+let square = (n) => n * n;
+console.log(square(6)); // 36
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Arrow function:
+
+```js
+const add = (a, b) => a + b;
+console.log(add(2, 3)); // 5
+```
+-------------------------------------------------------------------------------------------------------------------------------------------
+## this:-
+Hum this ka use karte hain taaki function ke andar object ka naam hardcode na karna pade, aur code reusable + flexible ho jaye.
+
+(this keyword is used to refer to the current object.It helps us avoid hardcoding object names, makes functions reusable, and is very useful in objects, constructors, classes, and event handling.
+)
+
+
+```js
+const person = {
+  name: "Priya",
+  normalFunc: function() {
+    console.log(this.name);
+  }
+};
+person.normalFunc(); // Priya ✅
+
+------------------------------------------------------------------------------------------------------------------------------------------
+  
+let user = {
+  name: "Kajal",
+  sayHi: function() {
+    console.log("Hi " + this.name);
+  }
+};
+user.sayHi(); // Hi Kajal
+------------------------------------------------------------------------------------------------------------------------------------------
+
+
+``js
+let user = {
+  name:"kaju",
+  age :21,
+  info : function(){
+    console.log(this.name + "is" + this.age + "years old);
+  }
+};
+
+user.infor();
+```
+------------------------------------------------------------------------------------------------------------------------------------------
+
+*Closure:-
+        “A closure is a function that remembers its lexical scope, even when it is executed outside of that scope.”(“Closure एक ऐसा function है जो अपने lexical scope (यानि जिस जगह पर वो बना था, उसके variables और environment) को याद रखता है, भले ही उसे उस scope के बाहर execute किया जाए।”)
+
+Use of Closure:-
+Closure का use private data बनाने, state को preserve करने, callbacks/event handlers में values याद रखने और modular code लिखने के लिए किया जाता है।
+
+
+Outer Function का मतलब:-
+.जब हम एक function के अंदर दूसरा function बनाते हैं:
+.बाहर वाला function 👉 Outer Function
+.अंदर वाला function 👉 Inner Function
+
+👉 और जब inner function, outer function के variables को access करता है, तो इसे Closure कहते हैं।
+
+Closure Code बनाने के Steps:-
+
+1.एक Outer Function बनाओ।
+2.Outer function के अंदर कोई variable declare करो।
+3.Outer function के अंदर एक Inner function बनाओ।
+4.Inner function उस variable को use करे।
+5.Inner function को return कर दो।
+6.Outer function को call करके result use करो।
+
+#Basic Closure:-
+```js
+function outer() {          // Step 1
+    let a = 10;             // Step 2 (outer variable)
+
+    function inner() {      // Step 3
+        console.log(a);     // Step 4 (use outer variable)
+    }
+
+    return inner;           // Step 5
+}
+
+let myFunc = outer();       // Step 6
+myFunc();  // Output: 10
+
+```
+----------------------------------------------------------------------------------------------------------------------------------------
+1. Objects in JavaScript
+
+👉 Objects basically key–value pairs hote हैं.
+हर key ek property या method हो सकती है।
+
+```js
+let person = {
+    name: "Kajal",
+    age: 22,
+    city: "Indore",
+    
+    // Method (function inside object)
+    greet: function() {
+        return `Hello, my name is ${this.name}`;
+    }
+};
+
+console.log(person.name);   // Property access → Kajal
+console.log(person.greet()); // Method call → Hello, my name is Kajal
+
+--------------------------------------------------------------------------------------------------------------------------------------
+#Methods of Objects:-
+
+Object methods :- keys(), values(), entries(), assign() etc.
+Example:-
+let student = {
+    id: 101,
+    name: "Aman"
+};
+
+// 🔹 Object.keys() → sabhi keys return karega
+      console.log(Object.keys(student));  
+; // ["id", "name"]
+
+// 🔹 Object.values() → sabhi values return karega
+      console.log(Object.values(student));  
+;   [101, "Aman"]
+
+// 🔹 Object.entries() → [key, value] pairs return karega
+      console.log(Object.entries(student));  
+; // [["id", 101], ["name", "Aman"]]
+
+// 🔹 Object.assign() → ek object ke properties dusre me copy karega
+let extra = { age: 20 };
+Object.assign(student, extra);
+console.log(student); 
+; // { id: 101, name: "Aman", age: 20 }
+```
+------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
+4.Hoisting in JavaScript:-
+
+Hoisting is JavaScript’s behavior of moving variable and function declarations to the top of their scope before code execution.
+
+Key Points:
+
+Only declarations are hoisted, not initializations.
+
+var is hoisted and initialized as undefined.
+
+### **1️⃣ Variable Hoisting**
+
+* **var** → केवल declaration hoist होती है, **initialization नहीं**।
+  Access करने पर declaration से पहले → `undefined`
+
+```js
+console.log(a); // undefined
+var a = 5;
+```
+
+* **let और const** → hoisted तो होती हैं लेकिन **Temporal Dead Zone (TDZ)** में रहती हैं। Declaration से पहले access → `ReferenceError`
+
+```javascript
+console.log(b); // ReferenceError
+let b = 10;
+```
+
+
+### **2️⃣ Function Hoisting**
+
+* **Function Declaration** → पूरी तरह hoist हो जाती है। Call किया जा सकता है declaration से पहले।
+
+```js
+greet(); // "Hello"
+function greet() { console.log("Hello"); 
+
+}
+
+* **Function Expression** → केवल variable hoist होता है, function नहीं। Call करने पर **TypeError** आती है।
+
+
+sayHi(); // TypeError
+var sayHi = function() { console.log("Hi");
+ };
+
+```
+------------------------------------------------------------------------------------------------------------------------------------------
+
+## Callback function:-A callback function is a function that you pass as an argument to another function, and it is executed after some operation is completed. 
+```js
+function greet(name, callback) {
+    console.log('Hello ' + name);
+    callback(); // calling the callback function
+}
+
+function sayGoodbye() {
+    console.log('Goodbye!');
+}
+
+greet('Kajal', sayGoodbye);
+
+```
+------------------------------------------------------------------------------------------------------------------------------------------
+## Synchronous (सिंक)
+
+1.Synchronous में code line by line execute होता है।
+2.एक line पूरी होने के बाद ही अगली line execute होती है।
+3.इसे blocking code भी कहते हैं।
+
+Example:
+```js
+console.log("Step 1");
+console.log("Step 2");
+console.log("Step 3");
+```
+# Output
+Step 1
+Step 2
+Step 3
+------------------------------------------------------------------------------------------------------------------------------------------
+Example with function:-
+
+```js
+function greet() {
+    console.log("Hello!");
+}
+
+function sayBye() {
+    console.log("Goodbye!");
+}
+
+greet();
+sayBye();
+```
+## Output:
+Hello!
+Goodbye!
+
+------------------------------------------------------------------------------------------------------------------------------------------
+2️⃣ Asynchronous (असिंक)
+
+Asynchronous में code immediately आगे बढ़ जाता है, बिना किसी operation के complete होने का wait किए।
+इसे non-blocking code भी कहते हैं।
+अक्सर API calls, timers, या database calls में use होता है।
+
+Example with setTimeout:
+
+```js
+console.log("Step 1");
+
+setTimeout(function() {
+    console.log("Step 2 (after 2 seconds)");
+}, 2000);
+console.log("Step 3");
+
+## Output
+Step 1
+Step 3
+Step 2 (after 2 seconds)
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+1️⃣ setTimeout()
+
+setTimeout किसी function को एक बार delay के बाद execute करता है।
+
+Syntax:
+
+setTimeout(function, delay_in_milliseconds);
+
+Example:-
+console.log("Start");
+
+setTimeout(function() {
+    console.log("This runs after 2 seconds");
+}, 2000);
+
+console.log("End");
+
+ # Output
+
+Start
+End
+This runs after 2 seconds
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+2️⃣ setInterval()
+
+setInterval किसी function को बार-बार interval के हिसाब से चलाता है।
+
+Syntax:
+
+setInterval(function, interval_in_milliseconds);
+
+Example:-
+let count = 0;
+
+let intervalId = setInterval(function() {
+    count++;
+    console.log("Count: " + count);
+    if(count === 5) {
+        clearInterval(intervalId); // Stop after 5 times
+    }
+}, 1000);
+
+# Output (हर 1 सेकंड में):
+Count: 1
+Count: 2
+Count: 3
+Count: 4
+Count: 5
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+1️⃣ Promise क्या है?
+
+Promise एक object है जो future में किसी asynchronous operation का result handle करता है।
+
+इसे “अभी तो result नहीं है, लेकिन बाद में मिलेगा” के लिए use किया जाता है।
+
+Promise के 3 state होते हैं:
+
+1.Pending – अभी operation complete नहीं हुआ
+
+2.Resolved / Fulfilled – operation सफल हुआ
+
+3.Rejected – operation fail हुआ
+
+
+let promise = new Promise(function(resolve, reject) {
+    // asynchronous code
+    let success = true;
+
+    if(success) {
+        resolve("Operation Successful!");
+    } else {
+        reject("Operation Failed!");
+    }
+});
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+3️⃣ Using Promise with .then() and .catch()
+
+let promise = new Promise(function(resolve, reject) {
+    let success = true;
+
+    setTimeout(function() {
+        if(success) {
+            resolve("Data received successfully!");
+        } else {
+            reject("Error in fetching data!");
+        }
+    }, 2000);
+});
+
+promise
+.then(function(result) {
+    console.log(result); // success message
+})
+.catch(function(error) {
+    console.log(error); // error message
+});
+
+Output (2 seconds delay):-
+Data received successfully!
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### ✅ (e) Anonymous Function
+
+(Function without a name, mostly used as callbacks)
+
+```js
+setTimeout(function() {
+  console.log("This runs after 2 seconds");
+}, 2000);
+```
+
+---
+
+### ✅ (f) Immediately Invoked Function Expression (IIFE)
+
+(Runs immediately after creation)
+
+```js
+(function () {
+  console.log("IIFE executed!");
+})();
+```
+
+---
+
+## 🔹 4. Important Concepts with Functions
+
+1. **Default Parameters**
+
+```js
+function greet(name = "Guest") {
+  console.log("Hello " + name);
+}
+greet();         // Hello Guest
+greet("Kajal");  // Hello Kajal
+```
+
+2. **Rest Parameters**
+
+```js
+function sum(...numbers) {
+  return numbers.reduce((a, b) => a + b, 0);
+}
+console.log(sum(1, 2, 3, 4)); // 10
+```
+
+3. **Return vs. Console**
+
+* `return` → sends value back to caller
+* `console.log` → just prints it on screen
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+## 🔹 5. Higher-Order Functions
+
+Functions that take other functions as arguments or return functions.
+
+```js
+function calculate(x, y, operation) {
+  return operation(x, y);
+}
+let result = calculate(5, 3, (a, b) => a + b);
+console.log(result); // 8
+```
+
+---
+
+👉 In interviews, questions often come like:
+
+* Difference between function declaration & expression:-Declaration is hoisted, expression is not.
+* Arrow function vs normal function
+* Callback & higher-order functions
+* What is IIFE?
+* Rest vs Spread with functions
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Hosting:- JavaScript पहले variables और functions को memory में allocate कर देता है, फिर code execute होता है।
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+

@@ -14,6 +14,16 @@
    * Naming rules
    * Hoisting basics
 
+
+##Variables & Constants:-
+ var – Function scoped, can be re-declared & updated, hoisted.
+let – Block scoped, can be updated but not re-declared.
+const – Block scoped, cannot be updated or re-declared (immutable reference).
+
+Naming Rules: No spaces, can’t start with numbers, no reserved keywords.
+
+Hoisting: JS moves declarations to the top; var is hoisted with undefined, let/const are in temporal dead zone.
+
 3. **Data Types**
 
    * Primitive (String, Number, Boolean, Null, Undefined, Symbol, BigInt)

@@ -1,0 +1,76 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #89f7fe, #66a6ff);
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.box {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    gap: 20px;
+}
+
+.box div {
+    width: 120px;
+    height: 120px;
+    background-color: #ff6b6b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.5s ease, background-color 0.5s ease;
+    cursor: pointer;
+}
+
+/* Individual transforms on hover */
+.bone:hover {
+    transform: translate(40px, 20px);
+    background-color: #fcb045;
+}
+
+.btwo:hover {
+    transform: rotate(45deg);
+    background-color: #1dd1a1;
+}
+
+.bthree:hover {
+    transform: scaleX(1.5);
+    background-color: #ff6b6b;
+}
+
+.bfour:hover {
+    transform: scaleY(1.5);
+    background-color: #ff9f43;
+}
+
+.bfive:hover {
+    transform: scale(1.5);
+    background-color: #48dbfb;
+}
+
+.bsix:hover {
+    transform: skewX(20deg);
+    background-color: #10ac84;
+}
+
+.bseven:hover {
+    transform: skewY(20deg);
+    background-color: #341f97;
+}
+
+.beight:hover {
+    transform: skew(20deg, 10deg);
+    background-color: #ee5253;
+}
+
+.bnine:hover {
+    transform: matrix(1, 0.5, -0.5, 1, 30, 20);
+    background-color: #00d2d3;
+}

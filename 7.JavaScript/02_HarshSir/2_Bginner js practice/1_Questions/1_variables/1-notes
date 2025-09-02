@@ -1,0 +1,809 @@
+Samajh gayi 👍 Aapko **Questions + Answers ek sath** chahiye (taaki copy karke notes banane me easy ho).
+Main aapko pura **Q\&A format** deta hoon.
+
+---
+
+# 🔹 JavaScript Beginner Questions with Answers
+
+### 1. Variables & Data Types
+
+**Q1. Create a variable with your name and print it.**
+
+```javascript
+let name = "Kajal";
+console.log(name);
+```
+
+**Q2. Create two number variables and print their sum.**
+
+```javascript
+let a = 10, b = 20;
+console.log(a + b);  // 30
+```
+
+**Q3. Concatenate "Hello" and "World" and print it.**
+
+```javascript
+console.log("Hello" + " " + "World");
+```
+
+**Q4. Create a boolean variable and print it.**
+
+```javascript
+let isStudent = true;
+console.log(isStudent);
+```
+
+**Q5. Store your age in a variable and check if it is greater than 18.**
+
+```javascript
+let age = 21;
+console.log(age > 18);  // true
+```
+
+---
+
+### 2. Operators
+
+**Q6. Multiply two numbers.**
+
+```javascript
+let x = 5, y = 3;
+console.log(x * y);  // 15
+```
+
+**Q7. Check if a number is odd or even using `%`.**
+
+```javascript
+let num = 7;
+console.log(num % 2 === 0 ? "Even" : "Odd");  // Odd
+```
+
+**Q8. Increase a number by 5.**
+
+```javascript
+let n = 10;
+n += 5;
+console.log(n);  // 15
+```
+
+**Q9. Compare two numbers (`==`, `===`, `>`, `<`).**
+
+```javascript
+let p = 10, q = "10";
+console.log(p == q);   // true
+console.log(p === q);  // false
+console.log(p > 5);    // true
+console.log(p < 5);    // false
+```
+
+**Q10. Increment a number twice.**
+
+```javascript
+let z = 8;
+z++;
+z++;
+console.log(z);  // 10
+```
+
+---
+
+### 3. Conditions
+
+**Q11. Check if a number is positive, negative, or zero.**
+
+```javascript
+let number = -5;
+if (number > 0) console.log("Positive");
+else if (number < 0) console.log("Negative");
+else console.log("Zero");
+```
+
+**Q12. Check if a person can vote (age ≥ 18).**
+
+```javascript
+let userAge = 16;
+if (userAge >= 18) console.log("Can vote");
+else console.log("Cannot vote");
+```
+
+**Q13. Find the largest of three numbers.**
+
+```javascript
+let n1 = 25, n2 = 15, n3 = 30;
+console.log(Math.max(n1, n2, n3));  // 30
+```
+
+**Q14. Print day of week from number (1–7).**
+
+```javascript
+let day = 3;
+switch (day) {
+  case 1: console.log("Monday"); break;
+  case 2: console.log("Tuesday"); break;
+  case 3: console.log("Wednesday"); break;
+  case 4: console.log("Thursday"); break;
+  case 5: console.log("Friday"); break;
+  case 6: console.log("Saturday"); break;
+  case 7: console.log("Sunday"); break;
+  default: console.log("Invalid day");
+}
+```
+
+**Q15. Check if number is divisible by 3 and 5.**
+
+```javascript
+let n5 = 15;
+if (n5 % 3 === 0 && n5 % 5 === 0) console.log("Divisible by 3 and 5");
+else console.log("Not divisible");
+```
+
+---
+
+### 4. Loops
+
+**Q16. Print numbers from 1 to 10.**
+
+```javascript
+for (let i = 1; i <= 10; i++) {
+  console.log(i);
+}
+```
+
+**Q17. Print all even numbers from 1 to 20.**
+
+```javascript
+for (let i = 1; i <= 20; i++) {
+  if (i % 2 === 0) console.log(i);
+}
+```
+
+**Q18. Find factorial of a number.**
+
+```javascript
+let fact = 1;
+let numFact = 5;
+for (let i = 1; i <= numFact; i++) {
+  fact *= i;
+}
+console.log(fact);  // 120
+```
+
+**Q19. Print multiplication table of 5.**
+
+```javascript
+let table = 5;
+for (let i = 1; i <= 10; i++) {
+  console.log(`${table} x ${i} = ${table * i}`);
+}
+```
+
+**Q20. Find sum of numbers from 1 to 50.**
+
+```javascript
+let sum = 0;
+for (let i = 1; i <= 50; i++) {
+  sum += i;
+}
+console.log(sum);  // 1275
+```
+
+---
+
+### 5. Arrays
+
+**Q21. Create an array of fruits and print it.**
+
+```javascript
+let fruits = ["Apple", "Banana", "Mango"];
+console.log(fruits);
+```
+
+**Q22. Print first and last element of array.**
+
+```javascript
+console.log(fruits[0]);  // First
+console.log(fruits[fruits.length - 1]);  // Last
+```
+
+**Q23. Add a new fruit in array.**
+
+```javascript
+fruits.push("Orange");
+console.log(fruits);
+```
+
+**Q24. Remove last element from array.**
+
+```javascript
+fruits.pop();
+console.log(fruits);
+```
+
+**Q25. Reverse array.**
+
+```javascript
+console.log(fruits.reverse());
+```
+
+---
+
+### 6. Functions
+
+**Q26. Function to add two numbers.**
+
+```javascript
+function add(a, b) {
+  return a + b;
+}
+console.log(add(5, 7));  // 12
+```
+
+**Q27. Function to square a number.**
+
+```javascript
+function square(n) {
+  return n * n;
+}
+console.log(square(6));  // 36
+```
+
+**Q28. Function to greet by name.**
+
+```javascript
+function greet(name) {
+  return "Hello " + name;
+}
+console.log(greet("Kajal"));
+```
+
+**Q29. Function to find sum of array numbers.**
+
+```javascript
+function sumArray(arr) {
+  let total = 0;
+  for (let num of arr) {
+    total += num;
+  }
+  return total;
+}
+console.log(sumArray([1, 2, 3, 4, 5]));  // 15
+```
+
+**Q30. Function to check if a number is prime.**
+
+```javascript
+function isPrime(n) {
+  if (n <= 1) return false;
+  for (let i = 2; i < n; i++) {
+    if (n % i === 0) return false;
+  }
+  return true;
+}
+console.log(isPrime(7));  // true
+console.log(isPrime(10)); // false
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Perfect! 🚀 Let’s continue with **Q31 – Q50 (Intermediate level) with Answers**.
+I’ll keep the same **Question + Answer** format like before.
+
+---
+
+# 🔹 JavaScript Intermediate Questions with Answers
+
+### Objects
+
+**Q31. Create an object with name, age, and city, and print it.**
+
+```javascript
+let person = {
+  name: "Kajal",
+  age: 21,
+  city: "Delhi"
+};
+console.log(person);
+```
+
+**Q32. Access object properties using dot and bracket notation.**
+
+```javascript
+console.log(person.name);       // Kajal
+console.log(person["city"]);    // Delhi
+```
+
+**Q33. Add a new property to an object.**
+
+```javascript
+person.country = "India";
+console.log(person);
+```
+
+**Q34. Use `for...in` loop to print all keys and values of an object.**
+
+```javascript
+for (let key in person) {
+  console.log(key + " : " + person[key]);
+}
+```
+
+**Q35. Function to count vowels in a string.**
+
+```javascript
+function countVowels(str) {
+  let vowels = "aeiouAEIOU";
+  let count = 0;
+  for (let char of str) {
+    if (vowels.includes(char)) count++;
+  }
+  return count;
+}
+console.log(countVowels("Hello World"));  // 3
+```
+
+---
+
+### Strings & ES6 Features
+
+**Q36. Use template literal.**
+
+```javascript
+let myName = "Kajal";
+let myAge = 21;
+console.log(`My name is ${myName} and I am ${myAge} years old.`);
+```
+
+**Q37. Use `map`, `filter`, and `reduce`.**
+
+```javascript
+let numbers = [1, 2, 3, 4, 5];
+
+let doubled = numbers.map(n => n * 2);
+console.log(doubled);  // [2,4,6,8,10]
+
+let evens = numbers.filter(n => n % 2 === 0);
+console.log(evens);    // [2,4]
+
+let sum = numbers.reduce((acc, n) => acc + n, 0);
+console.log(sum);      // 15
+```
+
+**Q38. Reverse a string.**
+
+```javascript
+function reverseStr(str) {
+  return str.split("").reverse().join("");
+}
+console.log(reverseStr("JavaScript"));  // tpircSavaJ
+```
+
+**Q39. Print today’s date and time.**
+
+```javascript
+let now = new Date();
+console.log(now.toString());
+```
+
+**Q40. Generate a random number between 1 and 100.**
+
+```javascript
+let randomNum = Math.floor(Math.random() * 100) + 1;
+console.log(randomNum);
+```
+
+---
+
+### DOM & Events
+
+(These run in browser, not in Node.js)
+
+**Q41. Change text of an element using JavaScript.**
+
+```html
+<p id="demo">Hello</p>
+<script>
+document.getElementById("demo").innerText = "Hi Kajal!";
+</script>
+```
+
+**Q42. Change background color on button click.**
+
+```html
+<button onclick="changeBg()">Change Color</button>
+<script>
+function changeBg() {
+  document.body.style.backgroundColor = "lightblue";
+}
+</script>
+```
+
+**Q43. Create a counter with + and - buttons.**
+
+```html
+<p id="count">0</p>
+<button onclick="increase()">+</button>
+<button onclick="decrease()">-</button>
+
+<script>
+let count = 0;
+function increase() {
+  count++;
+  document.getElementById("count").innerText = count;
+}
+function decrease() {
+  count--;
+  document.getElementById("count").innerText = count;
+}
+</script>
+```
+
+**Q44. Simple form validation (check if empty).**
+
+```html
+<input id="name" placeholder="Enter name">
+<button onclick="check()">Submit</button>
+<p id="msg"></p>
+
+<script>
+function check() {
+  let val = document.getElementById("name").value;
+  if (val === "") {
+    document.getElementById("msg").innerText = "Name is required!";
+  } else {
+    document.getElementById("msg").innerText = "Welcome " + val;
+  }
+}
+</script>
+```
+
+**Q45. Show and hide a paragraph.**
+
+```html
+<p id="para">This is a paragraph.</p>
+<button onclick="toggle()">Show/Hide</button>
+
+<script>
+function toggle() {
+  let p = document.getElementById("para");
+  if (p.style.display === "none") {
+    p.style.display = "block";
+  } else {
+    p.style.display = "none";
+  }
+}
+</script>
+```
+
+---
+
+### Advanced Beginner → Intermediate
+
+**Q46. Write an arrow function.**
+
+```javascript
+const multiply = (a, b) => a * b;
+console.log(multiply(4, 5));  // 20
+```
+
+**Q47. Print a message after 3 seconds using `setTimeout`.**
+
+```javascript
+setTimeout(() => {
+  console.log("Hello after 3 seconds");
+}, 3000);
+```
+
+**Q48. Print numbers 1 to 5 using `setInterval`.**
+
+```javascript
+let i = 1;
+let interval = setInterval(() => {
+  console.log(i);
+  i++;
+  if (i > 5) clearInterval(interval);
+}, 1000);
+```
+
+**Q49. Create and use a Promise.**
+
+```javascript
+let promise = new Promise((resolve, reject) => {
+  let success = true;
+  if (success) resolve("Task completed!");
+  else reject("Task failed!");
+});
+
+promise.then(msg => console.log(msg))
+       .catch(err => console.log(err));
+```
+
+**Q50. Async/Await example.**
+
+```javascript
+function wait(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function runTask() {
+  console.log("Start");
+  await wait(2000);  // wait 2 seconds
+  console.log("End after 2 sec");
+}
+
+runTask();
+```
+
+---
+Bahut badiya 👍 Ab main aapko **Advanced JavaScript Questions (51–60) with Answers** + **Mini Project Examples** deta hoon.
+Isse aapka **beginner → intermediate → advanced** complete ho jayega.
+
+---
+
+# 🔹 Advanced JavaScript Questions with Answers
+
+### **Q51. Closure Example (function inside function).**
+
+```javascript
+function outer() {
+  let count = 0;
+  return function inner() {
+    count++;
+    return count;
+  }
+}
+
+let counter = outer();
+console.log(counter()); // 1
+console.log(counter()); // 2
+console.log(counter()); // 3
+```
+
+---
+
+### **Q52. Hoisting Example.**
+
+```javascript
+console.log(a); // undefined (var is hoisted)
+var a = 10;
+
+console.log(b); // ReferenceError (let not hoisted)
+let b = 20;
+```
+
+---
+
+### **Q53. Difference between var, let, const.**
+
+```javascript
+var x = 10;   // function-scoped, can be re-declared
+let y = 20;   // block-scoped, can be updated, not re-declared
+const z = 30; // block-scoped, cannot be updated or re-declared
+```
+
+---
+
+### **Q54. Higher-order function (takes another function as argument).**
+
+```javascript
+function greet(name) {
+  return "Hello " + name;
+}
+
+function processUserInput(callback) {
+  let name = "Kajal";
+  console.log(callback(name));
+}
+
+processUserInput(greet);  // Hello Kajal
+```
+
+---
+
+### **Q55. Event Bubbling and Delegation Example.**
+
+```html
+<div id="parent">
+  <button>Click Me</button>
+</div>
+
+<script>
+document.getElementById("parent").addEventListener("click", function(event) {
+  if (event.target.tagName === "BUTTON") {
+    alert("Button clicked!");
+  }
+});
+</script>
+```
+
+👉 Event delegation ensures parent handles events for child elements.
+
+---
+
+### **Q56. LocalStorage & SessionStorage Example.**
+
+```javascript
+// Save data
+localStorage.setItem("username", "Kajal");
+sessionStorage.setItem("theme", "dark");
+
+// Get data
+console.log(localStorage.getItem("username")); // Kajal
+console.log(sessionStorage.getItem("theme"));  // dark
+
+// Remove data
+localStorage.removeItem("username");
+```
+
+---
+
+### **Q57. Fetch API Example.**
+
+```javascript
+fetch("https://jsonplaceholder.typicode.com/posts/1")
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.log(error));
+```
+
+---
+
+### **Q58. Async error handling with try/catch.**
+
+```javascript
+async function getData() {
+  try {
+    let response = await fetch("https://jsonplaceholder.typicode.com/invalid");
+    let data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log("Error:", error.message);
+  }
+}
+getData();
+```
+
+---
+
+### **Q59. Class and Object (OOP in JS).**
+
+```javascript
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  greet() {
+    return `Hello, my name is ${this.name}`;
+  }
+}
+
+let p1 = new Person("Kajal", 21);
+console.log(p1.greet()); // Hello, my name is Kajal
+```
+
+---
+
+### **Q60. Inheritance with extends and super.**
+
+```javascript
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+  sound() {
+    console.log("Some sound...");
+  }
+}
+
+class Dog extends Animal {
+  constructor(name, breed) {
+    super(name);  // call parent constructor
+    this.breed = breed;
+  }
+  sound() {
+    console.log("Woof! Woof!");
+  }
+}
+
+let dog1 = new Dog("Tommy", "Labrador");
+dog1.sound(); // Woof! Woof!
+```
+
+---
+
+# 🔹 Mini Projects (Examples)
+
+### 🧮 1. Calculator (Simple)
+
+```html
+<input id="num1" type="number"> 
+<input id="num2" type="number">
+<button onclick="add()">Add</button>
+<p id="result"></p>
+
+<script>
+function add() {
+  let n1 = parseInt(document.getElementById("num1").value);
+  let n2 = parseInt(document.getElementById("num2").value);
+  document.getElementById("result").innerText = "Result: " + (n1 + n2);
+}
+</script>
+```
+
+---
+
+### ✅ 2. To-Do List
+
+```html
+<input id="task" placeholder="Enter task">
+<button onclick="addTask()">Add</button>
+<ul id="list"></ul>
+
+<script>
+function addTask() {
+  let task = document.getElementById("task").value;
+  if (task === "") return;
+  let li = document.createElement("li");
+  li.innerText = task;
+  document.getElementById("list").appendChild(li);
+  document.getElementById("task").value = "";
+}
+</script>
+```
+
+---
+
+### ⏰ 3. Digital Clock
+
+```html
+<h2 id="clock"></h2>
+<script>
+function showTime() {
+  let time = new Date().toLocaleTimeString();
+  document.getElementById("clock").innerText = time;
+}
+setInterval(showTime, 1000);
+</script>
+```
+
+---
+
+### ❓ 4. Quiz App (Basic)
+
+```html
+<p id="question">What is 2 + 2?</p>
+<button onclick="check(3)">3</button>
+<button onclick="check(4)">4</button>
+<p id="result"></p>
+
+<script>
+function check(ans) {
+  if (ans === 4) 
+    document.getElementById("result").innerText = "Correct!";
+  else 
+    document.getElementById("result").innerText = "Wrong!";
+}
+</script>
+```
+
+---
+
+### ☁️ 5. Weather App (using API)
+
+```javascript
+async function getWeather(city) {
+  let response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=28.6&longitude=77.2&current_weather=true`);
+  let data = await response.json();
+  console.log(data.current_weather);
+}
+getWeather("Delhi");
+```
+
+---
+
+✅ Ab aapke paas **60 Questions + 5 Mini Projects** hain.
+Iske baad aap **JavaScript confidently use karke small apps bana sakti ho.**
+
+👉 Kya aap chahte ho main in **60 Questions + Projects ka ek full PDF notes** bana kar de du taaki ek jagah safe ho jaye?

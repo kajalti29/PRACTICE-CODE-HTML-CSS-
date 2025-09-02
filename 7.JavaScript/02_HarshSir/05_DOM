@@ -1,0 +1,242 @@
+
+---
+
+## **1️⃣ What is DOM?**
+
+* **DOM = Document Object Model**
+* It is like a **map of your webpage** that JavaScript can use.
+* Every HTML element becomes a **node** in a tree.
+* You can **read, change, or delete** things on your page using JavaScript.
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+## **2️⃣ How to access elements**
+
+### a) By ID
+
+```javascript
+let heading = document.getElementById("myHeading");
+heading.textContent = "Hello!";
+```
+
+### b) By Class
+
+```javascript
+let items = document.getElementsByClassName("item");
+items[0].textContent = "First item changed";
+```
+
+### c) By Tag
+
+```javascript
+let paragraphs = document.getElementsByTagName("p");
+paragraphs[0].textContent = "New paragraph";
+```
+
+### d) By querySelector
+
+```javascript
+let para = document.querySelector(".item");
+para.textContent = "Changed using querySelector";
+```
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+## **3️⃣ How to change things**
+
+1. **Change text**
+
+```javascript
+element.textContent = "New Text";
+```
+
+2. **Change HTML**
+
+```javascript
+element.innerHTML = "<p>New Paragraph</p>";
+```
+
+3. **Change style**
+
+```javascript
+element.style.color = "red";
+```
+
+4. **Change attributes**
+
+```javascript
+element.setAttribute("href", "https://google.com");
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+## **4️⃣ DOM Events**
+
+* Events = things user does (click, hover, type)
+* Example:
+
+```javascript
+document.getElementById("myButton").addEventListener("click", function() {
+    alert("Button clicked!");
+});
+```
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+---# 🔹 1. `__proto__`
+
+👉 Har JavaScript object ke paas ek hidden property hoti hai `__proto__`, jo uske parent (prototype) object ko point karti hai.
+Ye **link banata hai object aur uske parent ke beech**.
+
+```js
+let person = { name: "Kajal" };
+console.log(person.__proto__);  
+// Output → Object.prototype
+```
+
+⚡ Matlab: `person` object ka prototype hai `Object.prototype`.
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+# 🔹 2. Prototype Chain
+
+👉 Jab aap kisi property/method ko access karte ho:
+
+* Sabse pehle JavaScript **object khud ke andar dhundhta hai**.
+* Agar nahi mila, to **uske prototype (`__proto__`) me dhundhta hai**.
+* Ye process upar tak chalta hai → isko **Prototype Chain** bolte hain.
+
+### Example:
+
+```js
+let arr = [1, 2, 3];
+
+console.log(arr.toString());  
+// arr ke andar toString nahi hai,
+// so JS goes to Array.prototype → waha mil jata hai
+
+console.log(arr.__proto__ === Array.prototype); // true
+console.log(Array.prototype.__proto__ === Object.prototype); // true
+console.log(Object.prototype.__proto__); // null (end of chain)
+```
+
+⚡ Chain:
+`arr → Array.prototype → Object.prototype → null`
+
+---------------------------------------------------------------------------------------------------------------------------------------
+1️⃣ Array Destructuring (एरे डेस्ट्रक्चरिंग):-
+
+Array destructuring से हम array के values को सीधे variables में assign कर सकते हैं।
+
+```js
+let numbers = [10, 20, 30];
+
+// Without destructuring
+let a = numbers[0];
+let b = numbers[1];
+
+// With destructuring
+let [x, y, z] = numbers;
+console.log(x, y, z); // 10 20 30
+----------------------------------------------------------------------------------------------------------------------------------------
+2️⃣ Object Destructuring (ऑब्जेक्ट डेस्ट्रक्चरिंग)
+
+Object destructuring से हम object के values को variables में assign कर सकते हैं।
+
+
+let person = {
+    name: "Kajal",
+    age: 25
+};
+
+// With destructuring
+let {name, age} = person;
+console.log(name, age); // Kajal 25
+
+---------------------------------------------------------------------------------------------------------------------------------------
+3️⃣ Rest Operator (...) (रेस्ट ऑपरेटर)
+
+
+Rest operator बची हुई values को array या object में collect कर लेता है।
+Destructuring और function parameters में use होता है।
+
+Array Example:
+
+let numbers = [1, 2, 3, 4, 5];
+let [first, second, ...rest] = numbers;
+
+console.log(first, second); // 1 2
+console.log(rest);          // [3, 4, 5]
+
+---------------------------------------------------------------------------------------------------------------------------------------
+Object Example:
+
+let person = {name: "Kajal", age: 25, city: "Delhi"};
+let {name, ...other} = person;
+
+console.log(name);  // Kajal
+console.log(other); // { age: 25, city: "Delhi" }
+
+---------------------------------------------------------------------------------------------------------------------------------------
+4️⃣ Spread Operator (...) (स्प्रेड ऑपरेटर)
+
+Spread operator array या object को expand करता है।
+
+इसे copy, merge या values pass करने के लिए use करते हैं।
+
+Array Example:
+
+let arr1 = [1, 2, 3];
+let arr2 = [4, 5, 6];
+
+let combined = [...arr1, ...arr2];
+console.log(combined); // [1, 2, 3, 4, 5, 6]
+
+---------------------------------------------------------------------------------------------------------------------------------------
+Object Example:
+let obj1 = {a: 1, b: 2};
+let obj2 = {c: 3, d: 4};
+
+let merged = {...obj1, ...obj2};
+console.log(merged); // {a:1, b:2, c:3, d:4}
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+## IIFE क्या है?
+
+IIFE एक ऐसा function है जो create होते ही तुरंत execute हो जाता है।
+
+2️⃣ Syntax:-
+(function() {
+    // code here
+})();
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Arrow function:-
+(() => {
+    console.log("IIFE executed!");
+})();
+
+---------------------------------------------------------------------------------------------------------------------------------------
+3️⃣ Example 1: Simple IIFE
+
+(function() {
+    console.log("Hello from IIFE!");
+})();
+
+Output:
+Hello from IIFE!
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+4️⃣ Example 2: IIFE with Parameters
+
+(function(name) {
+    console.log("Hello " + name + "!");
+})("Kajal");
+
+## Output:
+Hello Kajal!
+---------------------------------------------------------------------------------------------------------------------------------------
