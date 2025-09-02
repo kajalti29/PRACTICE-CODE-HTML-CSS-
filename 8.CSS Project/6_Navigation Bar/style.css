@@ -1,0 +1,84 @@
+body{
+    margin: 0;
+    font-family: 'poppins', sans-serif;
+    display: flex;
+    height: 100vh;
+    text-align: center;
+}
+.sidebar{
+    width:220px;
+    background: #042331;
+    color: #fff;
+    padding-top: 20px;
+    position: fixed;
+    height: 100%;
+}
+
+.sidebar .logo{
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    line-height: 100px;
+    background: #063146;
+    
+}
+
+.sidebar ul{
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li{
+    margin: 15px 0;
+}
+
+.sidebar ul li a{
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    align-items: center;
+    display: flex;
+    transition: 0.3s;
+}
+
+.sidebar ul li i{
+    margin-right: 12px;
+    width: 30px;
+    text-align: center;
+ }
+
+ .sidebar ul li a:hover {
+  background: #063146;
+  border-radius: 5px;
+}
+
+.text{
+   margin-left: 220px;   /* sidebar ke right side me content */
+    position: fixed;      /* hamesha fix rahega */
+    bottom: 40px;         /* screen ke bottom se 20px upar */
+    left: 220px;          /* sidebar ke baad start ho */
+    right: 0;
+    text-align: center;
+}
+
+.text h1{
+    font-size: 100px;
+    color: #063146;
+}
+
+.text .data{
+    border: none;
+    background-color: #063146;
+    color: #fff;
+    font-size: 60px;
+}
+
+.text p{
+    color: #063146;
+    color: 60px;
+    
+
+}
+
+
+
