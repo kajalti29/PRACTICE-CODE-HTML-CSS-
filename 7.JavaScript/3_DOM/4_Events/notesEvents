@@ -1,0 +1,6 @@
+Events :-addEventListener. removeListener
+Common events:- click, input, changes, submit, mouseseover, keyup.
+Event objects:- target, type, preventDefault.
+Events bubbling and capturing.
+Events delegation.
+
