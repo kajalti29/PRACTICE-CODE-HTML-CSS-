@@ -1,0 +1,54 @@
+DOM:-
+selecting elements:-getElementByID, getElementByClassName, querySelector, querySelectorAll.
+Text/content access:-innerText, innerContent, innerHTML.
+Attribute manipulation:- getAttribute, setAttribute, removeAttribute.
+Dynamic DOM manipulation:- createElements, appendChild, removeChild, prepend.
+
+
+1. getAttribute(attributeName):-👉 किसी element का attribute value read करने के लिए।
+
+
+<h1 id="heading" class="title">Hello</h1>
+
+<script>
+let h1 = document.querySelector("h1");
+
+// id और class पढ़ना
+console.log(h1.getAttribute("id"));     // "heading"
+console.log(h1.getAttribute("class"));  // "title"
+</script>
+------------------------------------------------------------------------------------------
+
+2. setAttribute(attributeName, value):-
+
+👉 किसी element का attribute add/update करने के लिए।
+
+```js
+<h1 id="heading">Hello</h1>
+
+<script>
+let h1 = document.querySelector("h1");
+
+// नया class add करना
+h1.setAttribute("class", "myClass");
+
+// नया attribute add करना
+h1.setAttribute("title", "This is heading");
+</script>
+
+------------------------------------------------------------------------------------------------
+
+3. removeAttribute(attributeName):-👉 किसी element का attribute हटाने के लिए।
+
+<h1 id="heading" class="title">Hello</h1>
+
+<script>
+let h1 = document.querySelector("h1");
+
+// class attribute हटाना
+h1.removeAttribute("class");
+</script>
+
+
+
+
