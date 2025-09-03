@@ -6,5 +6,6 @@
 // attribute
 // event listeners
 
-let h1 = document.getElementsByClassName("h1")
-h1.innerHTML = "Harsh badhiya hai"
+let h1 = document.querySelector("h1")
+h1.innerHTML = "Harsh badhiya hai" //Change the html text
+h1.innerText = "Harsh badhiya hai"
