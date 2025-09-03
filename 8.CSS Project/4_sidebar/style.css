@@ -7,7 +7,7 @@
 
 .main-box {
     position: relative;
-    background-image: url('52HVcjStCQTsaDJWzEt946.jpg'); 
+    background-image: url('pngtree-five-sleek-gaming-laptops-with-vibrant-rgb-backlit-keyboards-showcasing-colorful-image_17451655.webp'); 
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -16,9 +16,9 @@
 
 .sidebar-menu {
     position: fixed;
+    background-color: #184c50;
     height: 100vh;
     width: 280px;
-    background: rgb(15, 15, 64);
     box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
 }
 
