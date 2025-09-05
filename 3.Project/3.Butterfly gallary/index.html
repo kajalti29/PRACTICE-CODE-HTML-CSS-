@@ -1,27 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Butterfly Gallery</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    .maine {
+      display: grid;
+      grid-template-columns: repeat(3, auto); /* 3 columns with auto width */
+      grid-auto-rows: 150px; /* rows ki height */
+      gap: 20px; /* images ke beech kam space */
+      justify-content: center; /* grid heading ke center me */
+      align-items: center; /* vertical center */
+      padding: 20px;
+    }
+
+    .maine img {
+      width: 200px;   /* image chhoti width */
+      height: 150px; /* image zyada height */
+      object-fit: cover; 
+      border-radius: 8px;
+      opacity: 0.1;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+    }
+
+    .maine img:hover {
+      opacity: 1;
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    }
+  </style>
 </head>
 <body>
-    <h2>Butterfly Gallary</h2>
-        <div class="maine">
-            <img src="jpg.webp" alt="">
-            <img src="images (1).jpeg" alt="">
-            <img src="images (2).jpeg" alt="">
-            <img src="images (6).jpeg" alt="">
-            <img src="images (7).jpeg" alt="">
-            <img src="images (8).jpeg" alt="">
-            <img src="images (9).jpeg" alt="">
-            <img src="images (10).jpeg" alt="">
-            <img src="images (11).jpeg" alt="">
-            <img src="images (12).jpeg" alt="">
-            <img src="images (13).jpeg" alt="">
-            <img src="images.jpeg" alt="">
-        </div>
+
+  <h2>Butterfly Gallery</h2>
+
+  <div class="maine">
+    <img src="jpg.webp" alt="">
+    <img src="images (1).jpeg" alt="">
+    <img src="images (2).jpeg" alt="">
+    <img src="images (6).jpeg" alt="">
+    <img src="images (7).jpeg" alt="">
+    <img src="images (8).jpeg" alt="">
+    <img src="images (9).jpeg" alt="">
+    <img src="images (10).jpeg" alt="">
+    <img src="images (11).jpeg" alt="">
+    <img src="images (12).jpeg" alt="">
+    <img src="images (13).jpeg" alt="">
+    <img src="images.jpeg" alt="">
+  </div>
 
 </body>
 </html>
