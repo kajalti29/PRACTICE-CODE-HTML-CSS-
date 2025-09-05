@@ -52,3 +52,26 @@ h1.removeAttribute("class");
 
 
 
+// localStorage :-apke browser ke ander data store karna jo ki brower band hone pr bhi delete nhi hoga
+// SessionStorage:- Ye apkadata temporarily store karta hai matlab ki tab band hua aur data gaya
+
+//Cookies :-ye bhi data store karta hai and aapka data broer ke cookies naam ki property mein save hota hai . ye chote data ko store karte hai.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
