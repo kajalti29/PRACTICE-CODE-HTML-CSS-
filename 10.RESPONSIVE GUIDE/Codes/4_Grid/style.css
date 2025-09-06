@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html, body{
+    height: 100%;
+    width: 100%;
+}
+#parent{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    display: grid;
+    grid-template-columns: 200px 200px;
+}
+#child1{
+    background-color: teal;
+    border: 2px solid white;
+}
+
+#child2{
+    background-color: palevioletred;
+    border: 2px solid white;
+}
+
+#child3{
+    background-color: lightseagreen;
+    border: 2px solid white;
+}
+
+
+#child4{
+    background-color: lightsalmon;
+    border: 2px solid white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
