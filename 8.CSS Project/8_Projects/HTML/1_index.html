@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <h1>HTML Tutorial</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus voluptatem adipisci a! Fugiat illum dolore eum unde! Assumenda, ipsam perspiciatis? Officia assumenda fugit laudantium soluta cum delectus unde exercitationem veniam?</p>
+  <div id="main">
+    <h2>Login Form</h2>
+    <form>
+      <div class="input-box">
+        <i class="fas fa-user"></i>
+        <input type="text" placeholder="Email or phone" required>
+      </div>
+
+      <div class="input-box">
+        <i class="fas fa-lock"></i>
+        <input type="password" placeholder="Password" required>
+      </div>
+
+      <a href="#">Forgot password?</a>
+
+      <div class="row button">
+        <input type="submit" value="Login">
+      </div>
+
+      <div class="signup-link">
+        Not a member? <a href="#">Signup now</a>
+    </div>
+    </form>
+  </div>
 </body>
 </html>
